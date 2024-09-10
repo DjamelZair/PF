@@ -47,9 +47,11 @@
         /* Styling for the image */
         .profile-img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 50%; /* Makes the image round */
             margin-bottom: 15px;
+            object-fit: cover; /* Ensures the image scales properly inside the round frame */
         }
+
         /* Additional info box */
         .info-box {
             background-color: #1FC1C1;
@@ -61,18 +63,48 @@
             padding: 15px;
             background-color: #D6FCFF;
             border-radius: 10px;
+            margin-bottom: 50px;
         }
         .skills-box {
             padding: 15px;
             background-color: #D6FCFF;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 50px;
         }
-        h4:not(.about-me-header) {
+        .additional-box {
+            padding: 15px;
+            background-color: #D6FCFF;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+        h5:not(.about-me-header) {
             background-color: #9AADD6; /* Background color */
             color: #ffffff; /* Text color */
             padding: 10px; /* Padding around the text */
             border-radius: 8px; /* Rounded corners */
+            text-align: center; /* Centers the text */
+        }
+
+        /* Styling for the h3 in the Projects section */
+        #projects-section h3 {
+            background-color: #383C56; /* New background color for Projects */
+            color: #D6FCFF; /* Text color */
+            padding: 15px; /* Padding around the text */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 2rem; /* Controls the size of the text */
+            text-align: center; /* Centers the text */
+            margin-bottom: 30px; /* Adds space below the header */
+        }
+
+        /* Division Line */
+        .division-line {
+            border-top: 5px solid #1FC1C1; /* Change size and color */
+            margin: 6px 0;
+        }
+
+        /* Project Cards Styling */
+        .card {
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -96,7 +128,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="#">About</a>
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="#projects-section">Projects</a> <!-- Link to Projects Section -->
                         <a class="nav-link" href="#">Contact</a>
                     </div>
                 </div>
@@ -111,7 +143,8 @@
             <div class="col-lg-4">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
                 <div class="info-box">
-                    <h4 class="about-me-header">About Me</h4>                    <p>Hi there and welcome! My name is Djamel and I'm an eager, fast and enthusiastic learner. My background in
+                    <h4 class="about-me-header">About Me</h4>                    
+                    <p>Hi there and welcome! My name is Djamel and I'm an eager, fast and enthusiastic learner. My background in
                         healthcare and banking not only taught me a lot but also ignited a passion for risk analysis, creating interpretable 
                         representations of data and creating useful applications.  </p>
                     <p>Based in: Amsterdam</p>
@@ -122,7 +155,7 @@
             <div class="col-lg-8">
                 <!-- Skills Box -->
                 <div class="skills-box">
-                    <h4>ML Skill Overview</h4>
+                    <h5>ML Skill Overview</h5>
                     <ul>
                         <li><strong>Machine Learning Frameworks</strong>: TensorFlow, Keras, Scikit-learn</li>
                         <li><strong>Supervised & Unsupervised Learning</strong>: Random Forest, Isolation Forest, Clustering</li>
@@ -135,13 +168,16 @@
 
                 <!-- Education Box -->
                 <div class="education-box">
-                    <h4>Education</h4>
+                    <h5>Education</h5>
                     <ul>
                         <li><strong>AI Degree</strong> - University of Amsterdam (202X)</li>
                         <li><strong>Nursing Certification</strong> - Hogeschool van Amsterdam (2013)</li>
                     </ul>
+                </div>
 
-                    <h4>Additional Courses</h4>
+                <!-- Additional Courses Box -->
+                <div class="additional-box">
+                    <h5>Additional Courses</h5>
                     <ul>
                         <li>Environmntal Social Governance (ESG) - [Udemy]</li>
                         <li>Feature Engineering for Machine Learning - [Udemy]</li>
@@ -150,6 +186,84 @@
                 </div>
             </div>
         </div>
+
+        <!-- Division Line -->
+        <div class="division-line"></div>
+
+        <!-- Projects Section -->
+        <section id="projects-section">
+            <h3>Projects</h3>
+            
+            <!-- Grid for project cards -->
+            <div class="container">
+                <div class="row">
+                    <!-- Card 1 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <!-- Image cap -->
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczMp1lQh61QDB_9C1Wcg70UrlzMLnuKG0MJQLGEWxk27a4VZc0ThvMuS9KvgSjR34mBJ02Oo6ZUJwoaUUzgx-qDJf5DbgiPzCS2QF2maib3HUHL6EkzM6RmuuKqh5-scd-gcXmw4bBuLQur1Qc7NJeIK=w723-h592-s-no-gm?authuser=0" class="card-img-top" alt="Banking AI Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Banking & AI</h5>
+                                <p class="card-text">Explore how AI is transforming the banking sector.</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="https://github.com/DjamelZair/ChurnPrediction" target="_blank">Churn Prediction (GitHub Code)</a></li>
+                                    <li class="list-group-item"><a href="https://drive.google.com/file/d/12n9W_Zu6MZozG3xJr-F1JHBS8I2jWJ6v/view?usp=drive_link" target="_blank">Churn Prediction (Read PDF)</a></li>
+                                    <li class="list-group-item"><a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=drive_link">Sentiment Analysis (Read PDF)</a></li>
+                                    <li class="list-group-item"><a href="https://github.com/DjamelZair/fraud_imbalanced">Fraud Detection - Imbalanced Data</a></li>
+                                </ul>
+                                <a href="https://github.com/DjamelZair/ChurnPrediction" class="btn btn-primary mt-3">Explore Banking & AI</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate for other 5 cards -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Another Project Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Another Project</h5>
+                                <p class="card-text">Short description of another project.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Project Three Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Three</h5>
+                                <p class="card-text">Short description of project three.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Project Four Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Four</h5>
+                                <p class="card-text">Short description of project four.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Project Five Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Five</h5>
+                                <p class="card-text">Short description of project five.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Project Six Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Six</h5>
+                                <p class="card-text">Short description of project six.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!--JS-->
