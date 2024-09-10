@@ -1,74 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage | Djamel Zair</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+
+    <!--icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom styling for the profile image */
+        /* Styling the navbar */
+        .navbar {
+            background-color: #383c56;
+        }
+        .navbar-nav {
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+        .navbar-nav .nav-link {
+            color: #1fc1c1;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffffff;
+        }
+        .navbar-nav .nav-link.active {
+            margin-right: auto;
+        }
+        /* Styling the home icon */
+        .home-icon {
+            color: #1fc1c1;
+            margin-left: 15px; /* Spacing between icon and left border */
+        }
+        .home-icon:hover {
+            color: #ffffff;
+        }
+        /* Main body background color */
+        body {
+            background-color: #f2f2f2;
+        }
+        /* Styling for the image */
         .profile-img {
             width: 100%;
-            border-radius: 50%;
+            border-radius: 10px;
             margin-bottom: 15px;
-            margin-top: 100px; /* Adds space between the top and the image */
         }
-
-        /* Padding at the top of the container */
-        .container {
-            padding-top: 100px; /* Adjust the value to control the space */
+        /* Additional info box */
+        .info-box {
+            background-color: #1FC1C1;
+            padding: 15px;
+            border-radius: 10px;
         }
-
-        .about-section {
-            margin-top: 20px;
+        /* Education and courses box */
+        .education-box {
+            padding: 15px;
+            background-color: #D6FCFF;
+            border-radius: 10px;
+        }
+        .skills-box {
+            padding: 15px;
+            background-color: #D6FCFF;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        h4:not(.about-me-header) {
+            background-color: #9AADD6; /* Background color */
+            color: #ffffff; /* Text color */
+            padding: 10px; /* Padding around the text */
+            border-radius: 8px; /* Rounded corners */
         }
     </style>
 </head>
 <body>
+    <div class="container-fluid px-0"></div>
 
-    <!-- Main container -->
-    <div class="container">
-        <div class="row">
-            
-            <!-- Left side: Profile picture and About Me -->
-            <div class="col-md-4">
-                <img src="https://i.postimg.cc/XYwVrsYL/IMG-20240908-WA0012.jpg" alt="Profile Picture" class="profile-img">
-                <div class="about-section">
-                    <h3>About Me</h3>
-                    <p>
-                        Hi, I'm Djamel, an inquisitive, ambitious optimist who thrives in team-oriented tasks.
-                        My journey into AI began with a deep fascination for technology and its potential in banking and healthcare.
-                    </p>
-                </div>
-            </div>
+    <!--navbar-->
+    <nav class="navbar">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Home icon with spacing -->
+                <a class="navbar-brand home-icon" href="#">
+                    <span class="material-icons">home</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <!-- Right side: Project Cards -->
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Banking & AI</h5>
-                        <p class="card-text">Explore how AI is transforming the banking sector.</p>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="https://github.com/DjamelZair/ChurnPrediction" target="_blank">Churn Prediction (GitHub Code)</a></li>
-                            <li class="list-group-item"><a href="https://drive.google.com/file/d/12n9W_Zu6MZozG3xJr-F1JHBS8I2jWJ6v/view?usp=drive_link" target="_blank">Churn Prediction (Read PDF)</a></li>
-                            <li class="list-group-item"><a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=drive_link">Sentiment Analysis (Read PDF)</a></li>
-                            <li class="list-group-item"><a href="https://github.com/DjamelZair/fraud_imbalanced">Fraud Detection - Imbalanced Data</a></li>
-                        </ul>
-                        <a href="https://github.com/DjamelZair/ChurnPrediction" class="btn btn-primary mt-3">Explore Banking & AI</a>
+                <!-- Navbar links aligned to the right -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </div>
                 </div>
             </div>
+        </nav>
+    </nav>
 
+    <!--MAIN-->
+    <main class="container mt-5">
+        <div class="row">
+            <!-- First column: Profile Picture and Info -->
+            <div class="col-lg-4">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
+                <div class="info-box">
+                    <h4 class="about-me-header">About Me</h4>                    <p>Hi there and welcome! My name is Djamel and I'm an eager, fast and enthusiastic learner. My background in
+                        healthcare and banking not only taught me a lot but also ignited a passion for risk analysis, creating interpretable 
+                        representations of data and creating useful applications.  </p>
+                    <p>Based in: Amsterdam</p>
+                </div>
+            </div>
+
+            <!-- Second column: Skills and Education -->
+            <div class="col-lg-8">
+                <!-- Skills Box -->
+                <div class="skills-box">
+                    <h4>ML Skill Overview</h4>
+                    <ul>
+                        <li><strong>Machine Learning Frameworks</strong>: TensorFlow, Keras, Scikit-learn</li>
+                        <li><strong>Supervised & Unsupervised Learning</strong>: Random Forest, Isolation Forest, Clustering</li>
+                        <li><strong>Deep Learning</strong>: CNNs, RNNs, Generative Models (GANs, VAEs)</li>
+                        <li><strong>Reinforcement Learning</strong>: Decision-making and control algorithms</li>
+                        <li><strong>Computer Vision</strong>: OpenCV for image processing and object detection</li>
+                        <li><strong>Model Optimization</strong>: Feature engineering, hyperparameter tuning</li>
+                    </ul>
+                </div>
+
+                <!-- Education Box -->
+                <div class="education-box">
+                    <h4>Education</h4>
+                    <ul>
+                        <li><strong>AI Degree</strong> - University of Amsterdam (202X)</li>
+                        <li><strong>Nursing Certification</strong> - Hogeschool van Amsterdam (2013)</li>
+                    </ul>
+
+                    <h4>Additional Courses</h4>
+                    <ul>
+                        <li>Environmntal Social Governance (ESG) - [Udemy]</li>
+                        <li>Feature Engineering for Machine Learning - [Udemy]</li>
+                        <li>Credit Risk Modeling in Python - [Udemy]</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <footer class="text-center mt-4">
-        <p>&copy; 2024 Djamel Zair</p>
-    </footer>
-
-    <!-- Optional JavaScript for Bootstrap components -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
