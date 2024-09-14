@@ -8,7 +8,7 @@
     <!--font-->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
 
-    <!--icons-->`
+    <!--icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--CSS-->
@@ -16,7 +16,7 @@
     <style>
         /* Styling the navbar */
         .navbar {
-            background-color: #383c56;
+            background-color: #008080;
         }
         .navbar-nav {
             flex-grow: 1;
@@ -27,7 +27,7 @@
             transition: color 0.3s ease;
         }
         .navbar-nav .nav-link:hover {
-            color: #ffffff;
+            color: #edb53b;
         }
         .navbar-nav .nav-link.active {
             margin-right: auto;
@@ -38,7 +38,7 @@
             margin-left: 15px; /* Spacing between icon and left border */
         }
         .home-icon:hover {
-            color: #ffffff;
+            color: #edb53b;
         }
         /* Main body background color */
         body {
@@ -61,34 +61,34 @@
         /* Education and courses box */
         .education-box {
             padding: 15px;
-            background-color: #D6FCFF;
+            background-color: #edfffc;
             border-radius: 10px;
             margin-bottom: 50px;
         }
         .skills-box {
             padding: 15px;
-            background-color: #D6FCFF;
+            background-color: #edfffc;
             border-radius: 10px;
             margin-bottom: 50px;
         }
         .additional-box {
             padding: 15px;
-            background-color: #D6FCFF;
+            background-color: #edfffc;
             border-radius: 10px;
             margin-bottom: 50px;
         }
         h5:not(.about-me-header) {
-            background-color: #9AADD6; /* Background color */
-            color: #ffffff; /* Text color */
-            padding: 10px; /* Padding around the text */
-            border-radius: 8px; /* Rounded corners */
+            background-color: #cce6e6; /* Background color */
+            color: #004d4d; /* Text color */
+            padding: 5px; /* Padding around the text */
+            border-radius: 4px; /* Rounded corners */
             text-align: center; /* Centers the text */
         }
 
         /* Styling for the h3 in the Projects section */
         #projects-section h3 {
-            background-color: #383C56; /* New background color for Projects */
-            color: #D6FCFF; /* Text color */
+            background-color: #82d2c6; /* New background color for Projects */
+            color: #006666; /* Text color */
             padding: 15px; /* Padding around the text */
             border-radius: 10px; /* Rounded corners */
             font-size: 2rem; /* Controls the size of the text */
@@ -96,16 +96,16 @@
             margin-bottom: 30px; /* Adds space below the header */
         }
 
-        /* Division Line */
-        .division-line {
-            border-top: 5px solid #1FC1C1; /* Change size and color */
-            margin: 6px 0;
-        }
-
         /* Project Cards Styling */
         .card {
             margin-bottom: 30px;
         }
+        .featured-img {
+        width: 100%; /* Ensures the image adjusts to the container */
+        height: auto; /* Maintains aspect ratio */
+        max-height: 300px; /* Limits the height of the image */
+        object-fit: cover; /* Ensures the image fills the space properly */
+    }
     </style>
 </head>
 <body>
@@ -131,7 +131,6 @@
                         <a class="nav-link" href="#projects-section">Projects</a> <!-- Link to Projects Section -->
                         <a class="nav-link" href="#">Contact</a>
                         <a class="nav-link" href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExamVmbHg2b2lvc3Fmd2J1OTQycXBieTNodWluYXR0eXluNGxidmFqYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y7ReRvodmF1gA/giphy.webp">S T I L L U N D E R C O N S T R U C T I O N</a>
-
                     </div>
                 </div>
             </div>
@@ -146,7 +145,7 @@
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
                 <div class="info-box">
                     <h4 class="about-me-header">About Me</h4>                    
-                    <p>Hi there and welcome! My name is Djamel, a fast and enthusiastic learner with a solid background
+                    <p>Hi there and welcome! My name is Djamel a fast and enthusiastic learner with a solid background
                          in healthcare and banking. These fields have fueled my passion for analyzing risks, interpreting data 
                          and creating creative and effective solutions.
                          I am excited about applying my skills and motivation to new and dynamic challenges. 
@@ -198,14 +197,24 @@
         <!-- Projects Section -->
         <section id="projects-section">
             <h3>Projects</h3>
-            
+
+            <!-- Featured Project Card -->
+            <div class="card mb-3">
+              <img src="https://lh3.googleusercontent.com/pw/AP1GczMQavCwpBJ0byuXaWOqoGLg4DLrtx6Y_4Xmpd7Kb1Z7REwG1TOizUI-8nhonC6x8gnfd8LrVLngnI28XTc8SNFVsoOSs7PF-zslGAjIZUZXg7bKKv32R9WRKIrrB9IHFbJg2Iipir6ekV6XH-eF3V8c=w909-h606-s-no-gm?authuser=0" class="card-img-top" alt="Featured Project Image">
+              <div class="card-body">
+                <h5 class="card-title">Featured Project: Credit Scoring Model</h5>
+                <p class="card-text">This project involved creating a credit scoring model using machine learning techniques to assess customer creditworthiness based on various financial indicators. The model achieved high accuracy and interpretability by leveraging and evaluating several models. Through feature importance and PCA analysis, the image above demonstrates the segmentation of clients based 
+                    on their likelihood of defaulting on their loan. The project also includes outlier identification. </p>
+                <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
+              </div>
+            </div>
+
             <!-- Grid for project cards -->
             <div class="container">
                 <div class="row">
                     <!-- Card 1 -->
                     <div class="col-md-4">
                         <div class="card">
-                            <!-- Image cap -->
                             <img src="https://lh3.googleusercontent.com/pw/AP1GczMp1lQh61QDB_9C1Wcg70UrlzMLnuKG0MJQLGEWxk27a4VZc0ThvMuS9KvgSjR34mBJ02Oo6ZUJwoaUUzgx-qDJf5DbgiPzCS2QF2maib3HUHL6EkzM6RmuuKqh5-scd-gcXmw4bBuLQur1Qc7NJeIK=w723-h592-s-no-gm?authuser=0" class="card-img-top" alt="Banking AI Image">
                             <div class="card-body">
                                 <h5 class="card-title">Banking & AI</h5>
@@ -226,7 +235,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Datastructures&Algorithms</h5>
                                 <p class="card-text">Linked Lists, Sorting, Graphs and Navigation App .</p>
-                                <ul class="list-group list-group-flush"></ul>
+                                <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><a href="https://github.com/DjamelZair/Graphs" target="_blank">Graphs - Dutch Train Network (GitHub Code)</a></li>
                                     <li class="list-group-item"><a href="https://drive.google.com/file/d/12n9W_Zu6MZozG3xJr-F1JHBS8I2jWJ6v/view?usp=drive_link" target="_blank">Churn Prediction (Read PDF)</a></li>
                                 </ul>
