@@ -297,6 +297,41 @@
                 </div>
             </div>
         </section>
+        <section id="contact-section" class="container mt-5">
+        <h3>Contact Me</h3>
+        <form id="contactForm" action="/submit_contact" method="POST">
+            <div class="row">
+                <!-- Name Field -->
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+    
+                <!-- Email Field -->
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+    
+                <!-- Subject Field -->
+                <div class="col-12 mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter the subject" required>
+                </div>
+    
+                <!-- Message Field -->
+                <div class="col-12 mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message here" required></textarea>
+                </div>
+    
+                <!-- Submit Button -->
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </section>
     </main>
 
     <!--JS-->
