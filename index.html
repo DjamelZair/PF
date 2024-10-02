@@ -29,27 +29,18 @@
         .navbar-nav .nav-link:hover {
             color: #daffff;
         }
-        .navbar-nav .nav-link.active {
-            margin-right: auto;
-        }
-        /* Styling the home icon */
-        .home-icon {
-            color: #1fc1c1;
-            margin-left: 15px; /* Spacing between icon and left border */
-        }
-        .home-icon:hover {
-            color: #edb53b;
-        }
+
         /* Main body background color */
         body {
             background-color: #f2f2f2;
         }
-        /* Styling for the image */
+
+        /* Styling the profile image */
         .profile-img {
             width: 100%;
-            border-radius: 50%; /* Makes the image round */
+            border-radius: 50%;
             margin-bottom: 15px;
-            object-fit: cover; /* Ensures the image scales properly inside the round frame */
+            object-fit: cover;
         }
 
         /* Additional info box */
@@ -58,83 +49,84 @@
             padding: 15px;
             border-radius: 10px;
         }
-        /* Education and courses box */
-        .education-box {
-            padding: 15px;
+
+        /* Skills, Education, and Courses */
+        .skills-box, .education-box, .additional-box {
             background-color: #edfffc;
-            border-radius: 10px;
-            margin-bottom: 50px;
-        }
-        .skills-box {
             padding: 15px;
-            background-color: #edfffc;
             border-radius: 10px;
-            margin-bottom: 50px;
-        }
-        .additional-box {
-            padding: 15px;
-            background-color: #edfffc;
-            border-radius: 10px;
-            margin-bottom: 50px;
-        }
-        h5:not(.about-me-header) {
-            background-color: #cce6e6; /* Background color */
-            color: #004d4d; /* Text color */
-            padding: 5px; /* Padding around the text */
-            border-radius: 4px; /* Rounded corners */
-            text-align: center; /* Centers the text */
+            margin-bottom: 30px;
         }
 
-        /* Styling for the h3 in the Projects section */
+        /* Add space above the education section */
+        .education-box {
+            margin-top: 50px;
+        }
+
+        h5:not(.about-me-header) {
+            background-color: #cce6e6;
+            color: #004d4d;
+            padding: 5px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        h5  {
+            background-color: #cce6e6;
+            color: #004d4d;
+            padding: 5px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* Styling for the project section */
         #projects-section h3 {
-            background-color: #82d2c6; /* New background color for Projects */
-            color: #006666; /* Text color */
-            padding: 15px; /* Padding around the text */
-            border-radius: 10px; /* Rounded corners */
-            font-size: 2rem; /* Controls the size of the text */
-            text-align: center; /* Centers the text */
-            margin-bottom: 30px; /* Adds space below the header */
+            background-color: #82d2c6;
+            color: #006666;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         /* Project Cards Styling */
         .card {
             margin-bottom: 30px;
+            background-color: #edb53b; /* Project card color */
+            color: white;
         }
+
+        .card-body h5 {
+            color: white;
+        }
+
         .featured-img {
-        width: 100%; /* Ensures the image adjusts to the container */
-        height: auto; /* Maintains aspect ratio */
-        max-height: 300px; /* Limits the height of the image */
-        object-fit: cover; /* Ensures the image fills the space properly */
-    }
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
-    <div class="container-fluid px-0"></div>
-
-    <!--navbar-->
+    <!-- Navbar section -->
     <nav class="navbar">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <!-- Home icon with spacing -->
-                <a class="navbar-brand home-icon" href="#">
-                    <span class="material-icons">home</span>
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Navbar links aligned to the right -->
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="#">About</a>
-                        <a class="nav-link" href="#projects-section">Projects</a> <!-- Link to Projects Section -->
-                        <a class="nav-link" href="#">Contact</a>
-                        <a class="nav-link" href="https://img.freepik.com/fotos-premium/detener-envejecimiento-mujer-atractiva-joven-cabeza-vendajes-mirando-camara-mientras-medicos-hacen_386167-7710.jpg?w=826">Work In Progress</a>
-                    </div>
+        <div class="container-fluid">
+            <a class="navbar-brand home-icon" href="#">
+                <span class="material-icons">home</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#projects-section">Projects</a>
+                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="https://img.freepik.com/fotos-premium/detener-envejecimiento-mujer-atractiva-joven-cabeza-vendajes-mirando-camara-mientras-medicos-hacen_386167-7710.jpg?w=826">Work In Progress</a>
                 </div>
             </div>
-        </nav>
+        </div>
     </nav>
 
     <!-- Main content -->
@@ -150,7 +142,7 @@
                 </div>
             </div>
             
-            <!-- Featured Project Card -->
+            <!-- Featured Project Card in second column -->
             <div class="col-lg-8">
                 <div class="card-body text-center">
                     <h5 class="card-title">Featured Project: Credit Scoring Model</h5>
@@ -160,21 +152,19 @@
                     <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item text-center">
-                            <a href="https://drive.google.com/file/d/1fMiC2Z87tmVFWfx6LW8B7Il8h0ZeT67x/view?usp=sharing" target="_blank">
-                                Predicting Loan Default with Client Segmentation Analysis (PDF)
-                            </a>
+                            <a href="https://drive.google.com/file/d/1fMiC2Z87tmVFWfx6LW8B7Il8h0ZeT67x/view?usp=sharing" target="_blank">Predicting Loan Default with Client Segmentation Analysis (PDF)</a>
                         </li>
                     </ul>
                 </div>
-            
                 <div class="featured-img">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczMQavCwpBJ0byuXaWOqoGLg4DLrtx6Y_4Xmpd7Kb1Z7REwG1TOizUI-8nhonC6x8gnfd8LrVLngnI28XTc8SNFVsoOSs7PF-zslGAjIZUZXg7bKKv32R9WRKIrrB9IHFbJg2Iipir6ekV6XH-eF3V8c=w909-h606-s-no-gm?authuser=0" class="card-img-top" alt="Segmentation of clients based on loan default likelihood">
                 </div>
             </div>
+        </div>
 
-            
-            <!-- Second column: Skills and Education -->
-            <div class="col-lg-8">
+        <div class="row">
+            <!-- Left column: Skills, Education, and Courses -->
+            <div class="col-lg-6">
                 <!-- Skills Box -->
                 <div class="skills-box">
                     <h5>ML Skill Overview</h5>
@@ -190,18 +180,17 @@
 
                 <!-- Education Box -->
                 <div class="education-box">
-                    <h5> University Eduction</h5>
+                    <h5>University Education</h5>
                     <ul>
                         <li><strong>AI Degree</strong> - University of Amsterdam (202X)</li>
                         <li><strong>Nursing Certification</strong> - Hogeschool van Amsterdam (2013)</li>
-                       <li> <a></a> href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank"> See Resume for more info. </li></a>
-
+                        <li><a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">See Resume for more info.</a></li>
                     </ul>
                 </div>
 
                 <!-- Additional Courses Box -->
                 <div class="additional-box">
-                    <h5>Link to resume</h5>
+                    <h5>Additional Courses</h5>
                     <ul>
                         <li>Environmental Social Governance (ESG) - [Udemy]</li>
                         <li>Feature Engineering for Machine Learning - [Udemy]</li>
@@ -210,17 +199,11 @@
                     </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- Division Line -->
-        <div class="division-line"></div>
-
-        <!-- Projects Section -->
-        <section id="projects-section">
-            <h3>Projects</h3>
-
-            <!-- Grid for project cards -->
-            <div class="container">
+            <!-- Right column: Projects Section -->
+            <div class="col-lg-6">
+                <h5 style="font-weight: normal;">Projects</h5>
+                <!-- Grid for project cards -->
                 <div class="row">
                     <!-- Card 1 -->
                     <div class="col-md-4">
@@ -264,10 +247,10 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <!--JS-->
