@@ -29,29 +29,22 @@
         .navbar-nav .nav-link:hover {
             color: #edb53b;
         }
-
+        .navbar-nav .nav-link.active {
+            margin-right: auto;
+        }
+        /* Styling the home icon */
+        .home-icon {
+            color: #1fc1c1;
+            margin-left: 15px; /* Spacing between icon and left border */
+        }
+        .home-icon:hover {
+            color: #edb53b;
+        }
         /* Main body background color */
         body {
             background-color: #f2f2f2;
         }
-
-        /* Styling the form container */
-        .form-container {
-            max-width: 700px;
-            margin: 0 auto; /* Center align the form */
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        iframe {
-            width: 100%;
-            height: 600px; /* Define a fixed height for the iframe */
-            border: none;
-        }
-
-        /* Rest of your styling */
+        /* Styling for the image */
         .profile-img {
             width: 100%;
             border-radius: 50%; /* Makes the image round */
@@ -65,65 +58,101 @@
             padding: 15px;
             border-radius: 10px;
         }
-
-        .skills-box, .education-box, .additional-box {
+        /* Education and courses box */
+        .education-box {
             padding: 15px;
             background-color: #edfffc;
             border-radius: 10px;
             margin-bottom: 50px;
         }
-
-        h5 {
-            background-color: #cce6e6;
-            color: #004d4d;
-            padding: 5px;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        #projects-section h3 {
-            background-color: #82d2c6;
-            color: #006666;
+        .skills-box {
             padding: 15px;
+            background-color: #edfffc;
             border-radius: 10px;
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
+        }
+        .additional-box {
+            padding: 15px;
+            background-color: #edfffc;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+        h5:not(.about-me-header) {
+            background-color: #cce6e6; /* Background color */
+            color: #004d4d; /* Text color */
+            padding: 5px; /* Padding around the text */
+            border-radius: 4px; /* Rounded corners */
+            text-align: center; /* Centers the text */
         }
 
+        /* Styling for the h3 in the Projects section */
+        #projects-section h3 {
+            background-color: #82d2c6; /* New background color for Projects */
+            color: #006666; /* Text color */
+            padding: 15px; /* Padding around the text */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 2rem; /* Controls the size of the text */
+            text-align: center; /* Centers the text */
+            margin-bottom: 30px; /* Adds space below the header */
+        }
+
+        /* Project Cards Styling */
         .card {
             margin-bottom: 30px;
         }
-
         .featured-img {
-            width: 100%;
-            height: auto;
-            max-height: 300px;
-            object-fit: cover;
-        }
+        width: 100%; /* Ensures the image adjusts to the container */
+        height: auto; /* Maintains aspect ratio */
+        max-height: 300px; /* Limits the height of the image */
+        object-fit: cover; /* Ensures the image fills the space properly */
+    }
     </style>
 </head>
 <body>
-    <!-- Navbar section -->
+    <div class="container-fluid px-0"></div>
+
+    <!--navbar-->
     <nav class="navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand home-icon" href="#">
-                <span class="material-icons">home</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="#">About</a>
-                    <a class="nav-link" href="#projects-section">Projects</a>
-                    <a class="nav-link" href="#">Contact</a>
-                    <a class="nav-link" href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExamVmbHg2b2lvc3Fmd2J1OTQycXBieTNodWluYXR0eXluNGxidmFqYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y7ReRvodmF1gA/giphy.webp">S T I L L U N D E R C O N S T R U C T I O N</a>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Home icon with spacing -->
+                <a class="navbar-brand home-icon" href="#">
+                    <span class="material-icons">home</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links aligned to the right -->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#projects-section">Projects</a> <!-- Link to Projects Section -->
+                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExamVmbHg2b2lvc3Fmd2J1OTQycXBieTNodWluYXR0eXluNGxidmFqYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y7ReRvodmF1gA/giphy.webp">S T I L L U N D E R C O N S T R U C T I O N</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </nav>
 
+    <!--MAIN-->
+    <main class="container mt-5">
+        <div class="row">
+            <!-- First column: Profile Picture and Info -->
+            <div class="col-lg-4">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
+                <div class="info-box">
+                    <h4 class="about-me-header">About Me</h4>                    
+                    <p>Hi there and welcome! My name is Djamel a fast and enthusiastic learner with a solid background
+                         in healthcare and banking. These fields have fueled my passion for analyzing risks, interpreting data 
+                         and creating creative and effective solutions.
+                         I am excited about applying my skills and motivation to new and dynamic challenges. 
+                      </p>
+                    <p>Based in: Amsterdam</p>
+                </div>
+            </div>
     <!-- Main content -->
     <main class="container mt-5">
         <div class="row">
