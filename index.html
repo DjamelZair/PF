@@ -52,6 +52,55 @@
         }
 
         /* Rest of your styling */
+        .profile-img {
+            width: 100%;
+            border-radius: 50%; /* Makes the image round */
+            margin-bottom: 15px;
+            object-fit: cover; /* Ensures the image scales properly inside the round frame */
+        }
+
+        /* Additional info box */
+        .info-box {
+            background-color: #1FC1C1;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .skills-box, .education-box, .additional-box {
+            padding: 15px;
+            background-color: #edfffc;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        h5 {
+            background-color: #cce6e6;
+            color: #004d4d;
+            padding: 5px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        #projects-section h3 {
+            background-color: #82d2c6;
+            color: #006666;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            margin-bottom: 30px;
+        }
+
+        .featured-img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -77,17 +126,89 @@
     <!-- Main content -->
     <main class="container mt-5">
         <div class="row">
-            <div class="col-lg-12">
-                <h3>Contact Form</h3>
-                <div class="form-container">
-                    <!-- Google Form Embed -->
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe34jOvRNX9VyDQJydoIZX-h5X0UORKVTt_JWjgG1sVJRcQ1Q/viewform?embedded=true">
-                        Loading…
-                    </iframe>
+            <!-- First column: Profile Picture and Info -->
+            <div class="col-lg-4">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
+                <div class="info-box">
+                    <h4 class="about-me-header">About Me</h4>                    
+                    <p>Hi there and welcome! My name is Djamel, a fast and enthusiastic learner with a solid background in healthcare and banking. These fields have fueled my passion for analyzing risks, interpreting data, and creating creative and effective solutions.</p>
+                    <p>Based in: Amsterdam</p>
+                </div>
+            </div>
+
+            <!-- Second column: Skills and Education -->
+            <div class="col-lg-8">
+                <!-- Skills Box -->
+                <div class="skills-box">
+                    <h5>ML Skill Overview</h5>
+                    <ul>
+                        <li><strong>Machine Learning Frameworks</strong>: TensorFlow, Keras, Scikit-learn</li>
+                        <li><strong>Supervised & Unsupervised Learning</strong>: Random Forest, Isolation Forest, Clustering</li>
+                        <li><strong>Deep Learning</strong>: CNNs, RNNs, Generative Models (GANs, VAEs)</li>
+                        <li><strong>Reinforcement Learning</strong>: Decision-making and control algorithms</li>
+                        <li><strong>Computer Vision</strong>: OpenCV for image processing and object detection</li>
+                        <li><strong>Model Optimization</strong>: Feature engineering, hyperparameter tuning</li>
+                    </ul>
+                </div>
+
+                <!-- Education Box -->
+                <div class="education-box">
+                    <h5>Education</h5>
+                    <ul>
+                        <li><strong>AI Degree</strong> - University of Amsterdam (202X)</li>
+                        <li><strong>Nursing Certification</strong> - Hogeschool van Amsterdam (2013)</li>
+                    </ul>
+                </div>
+
+                <!-- Additional Courses Box -->
+                <div class="additional-box">
+                    <h5>Additional Courses</h5>
+                    <ul>
+                        <li>Environmental Social Governance (ESG) - [Udemy]</li>
+                        <li>Feature Engineering for Machine Learning - [Udemy]</li>
+                        <li>Ethical Hacking</li>
+                        <li>Credit Risk Modeling in Python - [Udemy]</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <!-- Division Line -->
+        <div class="division-line"></div>
+
+        <!-- Projects Section -->
+        <section id="projects-section">
+            <h3>Projects</h3>
+
+            <!-- Featured Project Card -->
+            <div class="card mb-3">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMQavCwpBJ0byuXaWOqoGLg4DLrtx6Y_4Xmpd7Kb1Z7REwG1TOizUI-8nhonC6x8gnfd8LrVLngnI28XTc8SNFVsoOSs7PF-zslGAjIZUZXg7bKKv32R9WRKIrrB9IHFbJg2Iipir6ekV6XH-eF3V8c=w909-h606-s-no-gm?authuser=0" class="card-img-top" alt="Segmentation of clients based on loan default likelihood">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Featured Project: Credit Scoring Model</h5>
+                    <p class="card-text">
+                        This project involved creating a credit scoring model using machine learning techniques to assess customer creditworthiness based on various financial indicators.
+                    </p>
+                    <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-center">
+                            <a href="https://drive.google.com/file/d/1fMiC2Z87tmVFWfx6LW8B7Il8h0ZeT67x/view?usp=sharing" target="_blank">
+                                Predicting Loan Default with Client Segmentation Analysis (PDF)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Other project cards go here... -->
+        </section>
     </main>
+
+    <!-- Google Form Embed -->
+    <section id="contact-section" class="container mt-5">
+        <div class="text-center form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe34jOvRNX9VyDQJydoIZX-h5X0UORKVTt_JWjgG1sVJRcQ1Q/viewform?embedded=true" width="640" height="873" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
+        </div>
+    </section>
 
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
