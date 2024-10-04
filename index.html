@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +47,7 @@
 
         /* Additional info box */
         .info-box {
-            background-color: #1FC1C1;
+            background-color: #2cdfc1;
             padding: 15px;
             border-radius: 10px;
         }
@@ -71,16 +73,18 @@
             text-align: center;
         }
         h5  {
-            background-color: #cce6e6;
-            color: #004d4d;
+            background-color: #edb53b;
+            color: #edb53b;
             padding: 5px;
             border-radius: 4px;
             text-align: center;
         }
+        
 
         /* Styling for the project section */
+/* Styling for the project section */
         #projects-section h3 {
-            margin-top: 50px;
+            margin-top: 150px; /* Increased margin to push it down */
             background-color: #82d2c6;
             color: #006666;
             padding: 15px;
@@ -90,12 +94,13 @@
             margin-bottom: 70px;
         }
 
+
         /* Project Cards Styling */
         .card {
             width: 100%;
             margin-bottom: 30px;
             background-color: #e1fdfb; /* Project card color */
-            color: rgb(236, 16, 100);
+            color: rgb(0, 58, 45);
         }
 
         .card-body h5 {
@@ -107,30 +112,37 @@
             height: auto;
             max-height: 300px;
             object-fit: cover;
-            margin-bottom: 70px;
+            margin-bottom: 150px;
         }
     </style>
 </head>
 <body>
     <!-- Navbar section -->
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg"> <!-- Added navbar-expand-lg -->
         <div class="container-fluid">
+            <!-- Home icon with spacing -->
             <a class="navbar-brand home-icon" href="#">
                 <span class="material-icons">home</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+
+            <!-- Button for smaller screens to toggle the navbar -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Navbar links aligned to the right -->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="#">About</a>
+                <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="#projects-section">Projects</a>
                     <a class="nav-link" href="#">Contact</a>
                     <a class="nav-link" href="https://img.freepik.com/fotos-premium/detener-envejecimiento-mujer-atractiva-joven-cabeza-vendajes-mirando-camara-mientras-medicos-hacen_386167-7710.jpg?w=826">Work In Progress</a>
+                    <!-- New Dutch button -->
+                    <a class="btn btn-warning ms-3" href="#">Dutch</a>
                 </div>
             </div>
         </div>
     </nav>
+
 
     <!-- Main content -->
     <main class="container mt-5">
@@ -143,12 +155,32 @@
                     <p>Hi there and welcome! My name is Djamel, a fast and enthusiastic learner with a solid background in healthcare and banking. These fields have fueled my passion for analyzing risks, interpreting data, and creating creative and effective solutions.</p>
                     <p>Based in: Amsterdam</p>
                 </div>
+                            <!-- Left column: Skills, Education, and Courses -->
+                <!-- Education Box -->
+                <div class="education-box">
+                    <h5>University Education</h5>
+                    <ul>
+                        <li><strong>AI Degree</strong> - University of Amsterdam (202X)</li>
+                        <li><strong>Nursing Certification</strong> - Hogeschool van Amsterdam (2013)</li>
+                        <li><a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">See Resume for more info and additional courses.</a></li>
+                    </ul>
+                </div>
             </div>
             
             <!-- Featured Project Card in second column -->
+        
             <div class="col-lg-8">
+                <h5>Technical Skill Overview</h5>
+                <ul>
+                    <li><strong>Machine Learning Frameworks</strong>: TensorFlow, Keras, Scikit-learn</li>
+                    <li><strong>Supervised & Unsupervised Learning</strong>: Random Forest, Isolation Forest, Clustering</li>
+                    <li><strong>Deep Learning</strong>: CNNs, RNNs, Generative Models (GANs, VAEs)</li>
+                    <li><strong>Reinforcement Learning</strong>: Decision-making and control algorithms</li>
+                    <li><strong>Computer Vision</strong>: OpenCV for image processing and object detection</li>
+                    <li><strong>Model Optimization</strong>: Feature engineering, hyperparameter tuning</li>
+                </ul>
                 <div class="card-body text-center">
-                    <h5 class="card-title">Featured Project: Credit Scoring Model</h5>
+                    <h5>Featured Project: Credit Scoring Model</h5>
                     <p class="card-text">
                         This project involved creating a credit scoring model using machine learning techniques to assess customer creditworthiness based on various financial indicators.
                     </p>
@@ -165,71 +197,33 @@
             </div>
         </div>
 
-        <div class="row">
-            <!-- Left column: Skills, Education, and Courses -->
-            <div class="col-lg-6">
-                <!-- Education Box -->
-                <div class="education-box">
-                    <h5>University Education</h5>
-                    <ul>
-                        <li><strong>AI Degree</strong> - University of Amsterdam (202X)</li>
-                        <li><strong>Nursing Certification</strong> - Hogeschool van Amsterdam (2013)</li>
-                        <li><a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">See Resume for more info.</a></li>
-                    </ul>
-                </div>
-                <!-- Skills Box -->
-                <div class="skills-box">
-                    <h5>ML Skill Overview</h5>
-                    <ul>
-                        <li><strong>Machine Learning Frameworks</strong>: TensorFlow, Keras, Scikit-learn</li>
-                        <li><strong>Supervised & Unsupervised Learning</strong>: Random Forest, Isolation Forest, Clustering</li>
-                        <li><strong>Deep Learning</strong>: CNNs, RNNs, Generative Models (GANs, VAEs)</li>
-                        <li><strong>Reinforcement Learning</strong>: Decision-making and control algorithms</li>
-                        <li><strong>Computer Vision</strong>: OpenCV for image processing and object detection</li>
-                        <li><strong>Model Optimization</strong>: Feature engineering, hyperparameter tuning</li>
-                    </ul>
-                </div>
-
-
-                <!-- Additional Courses Box -->
-                <div class="additional-box">
-                    <h5>Additional Courses</h5>
-                    <ul>
-                        <li>Environmental Social Governance (ESG) - [Udemy]</li>
-                        <li>Feature Engineering for Machine Learning - [Udemy]</li>
-                        <li>Ethical Hacking</li>
-                        <li>Credit Risk Modeling in Python - [Udemy]</li>
-                    </ul>
-                </div>
-            </div>
 
             <!-- Right column: Projects Section -->
-            <div class="col-lg-6">
+            <section id="projects-section" class="container mt-5">
                 <h5 style="font-weight: normal;">Projects</h5>
                 <!-- Grid for project cards -->
                 <div class="row">
                     <!-- Card 1 -->
-                    <div class="col-12">
+                    <div class="col-md-4 mb-3">
                         <div class="card">
-                            <img src="https://lh3.googleusercontent.com/pw/AP1GczMp1lQh61QDB_9C1Wcg70UrlzMLnuKG0MJQLGEWxk27a4VZc0ThvMuS9KvgSjR34mBJ02Oo6ZUJwoaUUzgx-qDJf5DbgiPzCS2QF2maib3HUHL6EkzM6RmuuKqh5-scd-gcXmw4bBuLQur1Qc7NJeIK=w723-h592-s-no-gm?authuser=0" class="card-img-top" alt="Banking AI Image">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczOj3TKx6g6Lw7TtmHn5Vg0UEGpQ1L17-zslM6T31YU1nMicCQO5sCwMPgHa44OvVqvay_e6O5-x1t0JU9tfcNoRvPLlM1I_SM8Lr8uX5nZaB41PY23p1LZ2Be7J_c24OITqabma4g_hmYg_nW5JAWfX=w835-h606-s-no-gm?authuser=0" class="card-img-top" alt="Banking AI Image">
                             <div class="card-body">
-                                <h5 class="card-title">Churn Prediction and Classification</h5>
-                                <p class="card-text"> Aiding customer service by identiying focus groups.</p>
+                                <h5 class="card-title">Churn Prediction and Classification Using Various Feature Engineering Techniques</h5>
+                                <p class="card-text">Aiding customer service by identifying focus groups.</p>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><a href="https://github.com/DjamelZair/ChurnPrediction" target="_blank">Churn Prediction (GitHub Code)</a></li>
                                     <li class="list-group-item"><a href="https://drive.google.com/file/d/12n9W_Zu6MZozG3xJr-F1JHBS8I2jWJ6v/view?usp=drive_link" target="_blank">Churn Prediction (Read PDF)</a></li>
-                                    <li class="list-group-item"><a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=drive_link">Sentiment Analysis (Read PDF)</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="col-12">
+                    <div class="col-md-4 mb-3">
                         <div class="card">
                             <img src="https://lh3.googleusercontent.com/pw/AP1GczP3VD5-MNSeuTPWzATcyEfEmn7bOJyKA_TH-lSGpJRD9rcxsS5-lUZQXzOZPUvKN5fg3qUQZf7Q6cIwz9P42Hiy1HNSsPICxbV0oMHr1f-ZwHa8e2mSsoj274WjO5oFAHMhpEgYipRdh6dgam6k5tFY=w826-h568-s-no-gm?authuser=0" class="card-img-top" alt="Another Project Image">
                             <div class="card-body">
                                 <h5 class="card-title">Large Language Models (LLM) applications</h5>
-                                <p class="card-text">Sentiment Analysis, information retrieval and bias detecting A.I.  </p>
+                                <p class="card-text">Sentiment Analysis, information retrieval, and bias detection AI. Prioritizing complaints based on sentiment or discovering discriminatory factors in existing models.</p>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=drive_link">Sentiment Analysis (Read PDF)</a></li>
                                     <li class="list-group-item"><a href="https://drive.google.com/file/d/1nxecaRYFf7Uub-S0OpOSmyL0clC4vVFv/view?usp=sharing" target="_blank">Bias Benchmarking in Pre-trained Language Models Using the BBQ Dataset</a></li>
@@ -238,25 +232,62 @@
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="col-12">
+                    <div class="col-md-4 mb-3">
                         <div class="card">
-                            <img src="https://lh3.googleusercontent.com/pw/AP1GczPFuX7A8FVfjOLU2RwkSIimDpcQzIuuPB3IjQ3yQ3jzrLCm1vrxPysZ8KNBAw6uY7h8WsHyMH0H7YLq8lsbTrZbKMrhKSFzv672X9QhFU3sZ7p2i4_CVyN4epeB0HNnC7adtFxwSviXQXk4S8TQ1Cbn=w794-h606-s-no-gm?authuser=0" class="card-img-top" alt="Project Three Image">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczMp1lQh61QDB_9C1Wcg70UrlzMLnuKG0MJQLGEWxk27a4VZc0ThvMuS9KvgSjR34mBJ02Oo6ZUJwoaUUzgx-qDJf5DbgiPzCS2QF2maib3HUHL6EkzM6RmuuKqh5-scd-gcXmw4bBuLQur1Qc7NJeIK=w723-h592-s-no-gm?authuser=0" class="card-img-top" alt="Banking AI Image">
                             <div class="card-body">
                                 <h5 class="card-title">Imbalanced data sets and other data challenges</h5>
-                                <p class="card-text">Imputing techniques, feature selection. Help flag potential fraud without the use of protected variables</p>
+                                <p class="card-text">Imputing techniques, feature selection. Help flag potential fraud without the use of protected variables.</p>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><a href="https://github.com/DjamelZair/fraud_imbalanced">Fraud Detection - Imbalanced Data</a></li>
-
                                 </ul>
                             </div>
                         </div>
                     </div>                    
                 </div>
-            </div>
-        </div>
-    </main>
+            </section>
+
 
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
++
