@@ -5,241 +5,437 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
-    <!--font-->
+    <!-- Lettertypes -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
 
-    <!--icons-->
+    <!-- Iconen -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!--CSS-->
+    <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Styling van de navigatiebalk */
+        /* Stijl voor de navigatiebalk */
         .navbar {
             background-color: #008080;
-        }
-        .navbar-nav {
-            flex-grow: 1;
-            justify-content: flex-end;
         }
         .navbar-nav .nav-link {
             color: #edb53b;
             transition: color 0.3s ease;
         }
         .navbar-nav .nav-link:hover {
-            color: #daffff;
+            color: #0bd6bb;
         }
 
-        /* Achtergrondkleur van de hoofdtekst */
+        /* Achtergrondkleur van de hoofdinhoud */
         body {
-            background-color: #f2f2f2;
+            background-color: #ffffff;
         }
 
-        /* Styling van de profielfoto */
-        .profile-img {
-            width: 50%;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            object-fit: cover;
-        }
-
-        /* Extra informatie box */
-        .info-box {
-            background-color: #f7f7f7;
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        /* Vaardigheden, opleiding en cursussen */
-        .skills-box, .education-box, .additional-box {
-            background-color: #edfffc;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-        /* Ruimte boven de onderwijssectie */
-        .education-box {
+        /* Titel centreren en een mooie lettergrootte geven */
+        .main-title {
+            text-align: center;
             margin-top: 50px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
         }
-
-        h5:not(.about-me-header) {
-            background-color: #cce6e6;
-            color: #004d4d;
-            padding: 5px;
-            border-radius: 4px;
+        .intro-title {
             text-align: center;
-        }
-        h5  {
-            background-color: #edb53b;
-            color: #edb53b;
-            padding: 5px;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        /* Styling voor het projectgedeelte */
-        #projects-section h3 {
-            margin-top: 150px; /* Vergroot de marge om naar beneden te duwen */
-            background-color: #82d2c6;
-            color: #006666;
-            padding: 15px;
-            border-radius: 10px;
+            margin-top: 5px;
             font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Stijling voor de beschrijving onder de titel */
+        .intro-description {
             text-align: center;
-            margin-bottom: 70px;
+            font-size: 1.25rem;
+            margin-top: 10px;
+            color: #666;
         }
 
-        /* Projectkaarten Styling */
-        .card {
-            width: 100%;
-            margin-bottom: 30px;
-            background-color: #e1fdfb; /* Kleur van de projectkaart */
-            color: rgb(0, 58, 45);
+        /* Container voor de profielfoto met logo */
+        .profile-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
 
-        .card-body h5 {
-            color: #006666;
-        }
-
-        .featured-img {
-            width: 100%;
-            height: auto;
-            max-height: 300px;
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 260px;
+        }
+
+        /* Logo links van de profielfoto */
+        .logo-img {
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            width: 90px;
+            height: 80px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .logo-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Verborgen veld voor vaardigheden */
+        #skills {
+            display: none;
+            margin-top: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+            position: absolute;
+            left: 40px;
+            top: 140px;
+        }
+
+        .logo2-img {
+            position: absolute;
+            right: 40px;
+            top: 40px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .logo2-img:hover {
+            transform: scale(1.1);
+        }
+        #interests {
+            display: none;
+            margin-top: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+            position: absolute;
+            right: 40px;
+            top: 140px;
+        }
+
+        /* Bio-tekst centreren */
+        .bio-text {
+            max-width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Toevoegen van een scheidingslijn tussen koptekst en projectsectie */
+        .divider {
+            margin: 40px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Stijl voor projectkaarten */
+        .project-card {
+            border: 1px solid #e1e1e1;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+
+        .project-card h5 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card img {
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .project-card a {
+            color: #008080;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <!-- Navigatiebalk -->
-    <nav class="navbar navbar-expand-lg"> <!-- Navbar uitgebreid toegevoegd -->
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <!-- Home-icoon met afstand -->
             <a class="navbar-brand home-icon" href="#">
                 <span class="material-icons">home</span>
             </a>
-
-            <!-- Knop voor kleinere schermen om de navigatiebalk te togglen -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Navigatie wisselen">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navigatie links uitgelijnd naar rechts -->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="#projects-section">Projecten</a>
-                    <a class="nav-link" href="#">Contact</a>
-                    <a class="nav-link" href="https://img.freepik.com/fotos-premium/detener-envejecimiento-mujer-atractiva-joven-cabeza-vendajes-mirando-camara-mientras-medicos-hacen_386167-7710.jpg?w=826">Werk in uitvoering</a>
-                    <!-- Nieuwe Nederlandse knop -->
-                    <a class="btn btn-warning ms-3" href="index.html">English</a>
+                    <a class="nav-link" href="#contact-section">Contact</a>
+                    <a class="nav-link" href="#">Work In Progress</a>
+                    <a class="btn btn-warning ms-3" href="dutch.html">Nederlands</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hoofdinhoud -->
-    <main class="container mt-5">
-        <div class="row">
-            <!-- Eerste kolom: Profielfoto en info -->
-            <div class="col-lg-4">
-                <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Jouw profielfoto" class="profile-img">
-                <div class="info-box">
-                    <h4 class="about-me-header">Over mij</h4>                    
-                    <p>Hoi en welkom! Mijn naam is Djamel, een snelle en enthousiaste leerling met een solide achtergrond in de gezondheidszorg en het bankwezen. Deze velden hebben mijn passie aangewakkerd voor het analyseren van risico's, het interpreteren van data en het creëren van creatieve en effectieve oplossingen.</p>
-                    <p>Gebaseerd in: Amsterdam</p>
-                </div>
+    <main class="container">
+        <!-- Titelsectie -->
+        <div class="main-title">Portfolio</div>
+        <div class="intro-title">
+            Kunstmatige Intelligentie en Data-analyse
+        </div>
 
-                <!-- Onderwijsbox -->
-                <div class="education-box">
-                    <h5>Opleidingen</h5>
-                    <ul>
-                        <li><strong>AI-diploma</strong> - Universiteit van Amsterdam (202X)</li>
-                        <li><strong>Verpleegkunde Certificering</strong> - Hogeschool van Amsterdam (2013)</li>
-                        <li><a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">Bekijk CV voor meer informatie en aanvullende cursussen.</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Tweede kolom: Technische vaardigheden -->
-            <div class="col-lg-8">
-                <h5>Overzicht van technische vaardigheden</h5>
+        <!-- Beschrijving portfolio -->
+        <div class="intro-description">
+            Meer projecten worden ten minste eenmaal per maand toegevoegd. Neem gerust een kijkje. Alle feedback via het contactformulier wordt zeer gewaardeerd!
+        </div>
+
+        <!-- Profielfoto met logo -->
+        <div class="profile-container">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Profielfoto" class="profile-img">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOZ2DG_kijBwIEXA3G8h-ZHGjxqiGChp7t8ve9wcyBTVr-UZFm0_2GRuCzgSR-LYS6mt3LtMVXBm995MPj8QT8JYfZhurMZwwAs60hdJ0wI8tS44V7lnnF-EvGS7bZV59s3kZOltKof0mgl8DJlckyC=w500-h500-s-no-gm?authuser=0" alt="Logo" class="logo-img" id="logo">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczMDyT6VDi8EoZMDTxkRQjEqRMQnSXkU-K4jKYNnljWMCaBaUvtGDuzFpSK-ZBKzkfeOn2ftYDOuxemV0xydpdbYt6vKFRFJaf861170jUtyx3RJ0fNjIoX-2UghCjbwOap79Xxf0rVWhB5ngn3HECBW=w500-h500-s-no-gm" alt="Logo2" class="logo2-img" id="logo2">
+
+            <!-- Verborgen secties voor vaardigheden en interesses -->
+            <div id="skills">
+                <h3>Mijn Technische Vaardigheden</h3>
                 <ul>
-                    <li><strong>Machine Learning Frameworks</strong>: TensorFlow, Keras, Scikit-learn</li>
-                    <li><strong>Gecontroleerd & Ongecontroleerd Leren</strong>: Random Forest, Isolation Forest, Clustering</li>
-                    <li><strong>Diepgaand Leren</strong>: CNNs, RNNs, Generatieve Modellen (GANs, VAEs)</li>
-                    <li><strong>Versterkend Leren</strong>: Besluitvorming en controle-algoritmen</li>
-                    <li><strong>Computervisie</strong>: OpenCV voor beeldverwerking en objectdetectie</li>
-                    <li><strong>Modeloptimalisatie</strong>: Functie-engineering, hyperparameterafstemming</li>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>Machine Learning</li>
+                    <li>Generatieve AI</li>
+                    <li>Natural Language Processing</li>
+                    <li>Data-analyse</li>
+                    <li>SQL & Databases</li>
+                    <li>TensorFlow/Keras & Pytorch</li>
                 </ul>
-                <div class="card-body text-center">
-                    <h5>Uitgelicht project: Kredietscoremodel</h5>
-                    <p class="card-text">
-                        Dit project betrof het creëren van een kredietscoremodel met behulp van machine learning-technieken om de kredietwaardigheid van klanten te beoordelen op basis van verschillende financiële indicatoren.
-                    </p>
-                    <p class="card-text"><small class="text-muted">Laatst bijgewerkt 1 dag geleden</small></p>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-center">
-                            <a href="https://drive.google.com/file/d/1fMiC2Z87tmVFWfx6LW8B7Il8h0ZeT67x/view?usp=sharing" target="_blank">Voorspelling van wanbetaling met klantsegmentatie-analyse (PDF)</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="featured-img">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMQavCwpBJ0byuXaWOqoGLg4DLrtx6Y_4Xmpd7Kb1Z7REwG1TOizUI-8nhonC6x8gnfd8LrVLngnI28XTc8SNFVsoOSs7PF-zslGAjIZUZXg7bKKv32R9WRKIrrB9IHFbJg2Iipir6ekV6XH-eF3V8c=w909-h606-s-no-gm?authuser=0" class="card-img-top" alt="Segmentatie van klanten op basis van de kans op wanbetaling">
-                </div>
+            </div>
+            <div id="interests">
+                <h3>Mijn Interessengebieden</h3>
+                <ul>
+                    <li>Linguïstiek</li>
+                    <li>Filosofie</li>
+                    <li>Geopolitieke Zaken</li>
+                    <li>Medisch</li>
+                    <li>Mensenrechten</li>
+                    <li>Lokale en Wereldwijde Economie</li>
+                    <li>Politiek</li>
+                    <li>Star Trek</li>
+                </ul>
             </div>
         </div>
 
-        <!-- Projectensectie -->
-        <section id="projects-section" class="container mt-5">
-            <h5 style="font-weight: normal;">Projecten</h5>
-            <!-- Grid voor projectkaarten -->
-            <div class="row">
-                <!-- Kaart 1 -->
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="https://lh3.googleusercontent.com/pw/AP1GczOj3TKx6g6Lw7TtmHn5Vg0UEGpQ1L17-zslM6T31YU1nMicCQO5sCwMPgHa44OvVqvay_e6O5-x1t0JU9tfcNoRvPLlM1I_SM8Lr8uX5nZaB41PY23p1LZ2Be7J_c24OITqabma4g_hmYg_nW5JAWfX=w835-h606-s-no-gm?authuser=0" class="card-img-top" alt="Banking AI Afbeelding">
-                        <div class="card-body">
-                            <h5 class="card-title">Churn voorspelling en classificatie met behulp van verschillende feature engineering-technieken</h5>
-                            <p class="card-text">Helpen van de klantenservice door focusgroepen te identificeren.</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><a href="https://github.com/DjamelZair/ChurnPrediction" target="_blank">Churn Voorspelling (GitHub Code)</a></li>
-                                <li class="list-group-item"><a href="https://drive.google.com/file/d/12n9W_Zu6MZozG3xJr-F1JHBS8I2jWJ6v/view?usp=drive_link" target="_blank">Churn Voorspelling (Lees PDF)</a></li>
-                            </ul>
-                        </div>
-                    </div>
+        <!-- Sectie over mij -->
+        <div class="bio-text">
+            <p>Hallo en welkom! Mijn naam is Djamel, een snelle en enthousiaste leerling met een solide achtergrond in de gezondheidszorg en de banksector. Mijn achtergrond in kunstmatige intelligentie heeft mijn passie aangewakkerd voor het analyseren van risico's, het interpreteren van data en het ontwikkelen van creatieve, effectieve en praktische oplossingen.</p>
+            <p>Gebaseerd in: Amsterdam</p>
+            <a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">
+                <button class="btn btn-primary" style="background-color: #008080; border: none;">CV</button>
+            </a>
+        </div>
+
+        <!-- Scheidingslijn -->
+        <div class="divider"></div>
+
+        <!-- Uitgelicht project -->
+        <section id="featured-project-section" class="container mt-5">
+            <h5 class="text-center">Uitgelicht Project</h5>
+            <div class="card mx-auto mb-4" style="max-width: 800px;">
+                <div class="card-body text-center">
+                    <h5 class="card-title" style="font-size: 1.75rem; font-weight: bold;">Kredietscoresysteem</h5>
+                    <p class="card-text">Dit project betrof het creëren van een kredietscoresysteem met behulp van machine learning-technieken om de kredietwaardigheid van klanten te beoordelen op basis van verschillende financiële indicatoren.</p>
+                    <p class="card-text"><small class="text-muted">Laatst bijgewerkt 1 dag geleden</small></p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-center">
+                            <a href="https://drive.google.com/file/d/1fMiC2Z87tmVFWfx6LW8B7Il8h0ZeT67x/view?usp=sharing" target="_blank">Voorspellen van Leningsuitval met Klantensegmentatie Analyse (PDF)</a>
+                        </li>
+                    </ul>
                 </div>
-                <!-- Kaart 2 -->
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP3VD5-MNSeuTPWzATcyEfEmn7bOJyKA_TH-lSGpJRD9rcxsS5-lUZQXzOZPUvKN5fg3qUQZf7Q6cIwz9P42Hiy1HNSsPICxbV0oMHr1f-ZwHa8e2mSsoj274WjO5oFAHMhpEgYipRdh6dgam6k5tFY=w826-h568-s-no-gm?authuser=0" class="card-img-top" alt="Een ander project">
-                        <div class="card-body">
-                            <h5 class="card-title">Toepassingen van grote taalmodellen (LLM)</h5>
-                            <p class="card-text">Sentimentanalyse, informatie-ophaaltechnieken en het detecteren van bias in AI. Prioriteren van klachten op basis van sentiment of discriminerende factoren ontdekken in bestaande modellen.</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=drive_link">Sentimentanalyse (Lees PDF)</a></li>
-                                <li class="list-group-item"><a href="https://drive.google.com/file/d/1nxecaRYFf7Uub-S0OpOSmyL0clC4vVFv/view?usp=sharing" target="_blank">Bias Benchmarking in Pretrained Language Models Using the BBQ Dataset</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="featured-img text-center mt-3 mb-4">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMQavCwpBJ0byuXaWOqoGLg4DLrtx6Y_4Xmpd7Kb1Z7REwG1TOizUI-8nhonC6x8gnfd8LrVLngnI28XTc8SNFVsoOSs7PF-zslGAjIZUZXg7bKKv32R9WRKIrrB9IHFbJg2Iipir6ekV6XH-eF3V8c=w909-h606-s-no-gm?authuser=0" class="img-fluid rounded" alt="Kredietscoresysteem" style="max-height: 300px;">
                 </div>
-                <!-- Kaart 3 -->
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMp1lQh61QDB_9C1Wcg70UrlzMLnuKG0MJQLGEWxk27a4VZc0ThvMuS9KvgSjR34mBJ02Oo6ZUJwoaUUzgx-qDJf5DbgiPzCS2QF2maib3HUHL6EkzM6RmuuKqh5-scd-gcXmw4bBuLQur1Qc7NJeIK=w723-h592-s-no-gm?authuser=0" class="card-img-top" alt="Banking AI Afbeelding">
-                        <div class="card-body">
-                            <h5 class="card-title">Uitdagingen met onevenwichtige datasets en andere data-uitdagingen</h5>
-                            <p class="card-text">Imputatietechnieken, functie-selectie. Potentiële fraude signaleren zonder gebruik van beschermde variabelen.</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><a href="https://github.com/DjamelZair/fraud_imbalanced">Fraudedetectie - Onevenwichtige Data</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>                    
             </div>
         </section>
 
-    <!--JS-->
+        <!-- Projectsectie -->
+        <section id="projects-section" class="container">
+            <h5 class="text-center">Projecten</h5>
+            <div class="row">
+                <!-- Kaart 1 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczOj3TKx6g6Lw7TtmHn5Vg0UEGpQ1L17-zslM6T31YU1nMicCQO5sCwMPgHa44OvVqvay_e6O5-x1t0JU9tfcNoRvPLlM1I_SM8Lr8uX5nZaB41PY23p1LZ2Be7J_c24OITqabma4g_hmYg_nW5JAWfX=w835-h606-s-no-gm" alt="Churn Prediction">
+                        <h5>Verloopvoorspelling en Classificatie</h5>
+                        <p>Ondersteuning van de klantenservice door focusgroepen te identificeren.</p>
+                        <a href="https://github.com/DjamelZair/ChurnPrediction" target="_blank">Bekijk Project</a>
+                    </div>
+                </div>
+
+                <!-- Kaart 2 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP3VD5-MNSeuTPWzATcyEfEmn7bOJyKA_TH-lSGpJRD9rcxsS5-lUZQXzOZPUvKN5fg3qUQZf7Q6cIwz9P42Hiy1HNSsPICxbV0oMHr1f-ZwHa8e2mSsoj274WjO5oFAHMhpEgYipRdh6dgam6k5tFY=w826-h568-s-no-gm" alt="LLM Applications">
+                        <h5>Toepassingen van Grote Taalmodellen</h5>
+                        <p>Sentimentanalyse en AI voor bias-detectie.</p>
+                        <a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=drive_link" target="_blank">Bekijk Project</a>
+                    </div>
+                </div>
+
+                <!-- Kaart 3 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMp1lQh61QDB_9C1Wcg70UrlzMLnuKG0MJQLGEWxk27a4VZc0ThvMuS9KvgSjR34mBJ02Oo6ZUJwoaUUzgx-qDJf5DbgiPzCS2QF2maib3HUHL6EkzM6RmuuKqh5-scd-gcXmw4bBuLQur1Qc7NJeIK=w723-h592-s-no-gm" alt="Fraude Detectie">
+                        <h5>Onevenwichtige Databases & Fraude Detectie</h5>
+                        <p>Imputatietechnieken, functieselectie.</p>
+                        <a href="https://github.com/DjamelZair/fraud_imbalanced" target="_blank">Bekijk Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Contactsectie -->
+    <section id="contact-section" class="bg-light py-3 py-md-4">
+        <div class="container">
+            <div class="row gy-3 gy-md-3 gy-lg-0 align-items-md-center">
+                <div class="col-12 col-lg-6">
+                    <div class="row justify-content-xl-center">
+                        <div class="col-12 col-xl-11">
+                            <h2 class="h1 mb-3">Neem Contact Op</h2>
+                            <p class="lead fs-5 text-secondary mb-4">Ik waardeer alle feedback enorm of als je vragen hebt, neem dan gerust contact op!</p>
+                            <div class="d-flex mb-4">
+                                <div class="me-4 text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="mb-2">Adres</h4>
+                                    <address class="mb-0 text-secondary">Amsterdam, Nederland</address>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-12 col-sm-6">
+                                    <div class="d-flex mb-4 mb-sm-0">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telephone-outbound" viewBox="0 0 16 16">
+                                                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="mb-2">Telefoon</h4>
+                                            <p class="mb-0"><a class="link-secondary text-decoration-none" href="tel:+31612345678">+31 6 29089636</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="d-flex mb-0">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                                                <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
+                                                <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="mb-2">E-mail</h4>
+                                            <p class="mb-0"><a class="link-secondary text-decoration-none" href="mailto:djamel93-@hotmail.com">djamel93-@hotmail.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="bg-white border rounded shadow-sm overflow-hidden">
+                        <form action="#!">
+                            <div class="row gy-4 gy-xl-4 p-4 p-xl-4">
+                                <div class="col-12">
+                                    <label for="fullname" class="form-label">Volledige Naam <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="fullname" name="fullname" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="email" class="form-label">E-mail <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                            </svg>
+                                        </span>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="phone" class="form-label">Telefoonnummer</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                            </svg>
+                                        </span>
+                                        <input type="tel" class="form-control" id="phone" name="phone">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">Onderwerp <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="subject" name="subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Bericht <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary" type="submit" style="background-color: #008080;">Bericht Versturen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript om de zichtbaarheid van de vaardigheden-sectie te wisselen
+        document.getElementById('logo').addEventListener('click', function() {
+            var skills = document.getElementById('skills');
+            if (skills.style.display === "none" || skills.style.display === "") {
+                skills.style.display = "block"; // Toon de vaardigheden
+            } else {
+                skills.style.display = "none"; // Verberg de vaardigheden
+            }
+        });
+        document.getElementById('logo2').addEventListener('click', function() {
+            var skills = document.getElementById('interests');
+            if (skills.style.display === "none" || skills.style.display === "") {
+                skills.style.display = "block"; // Toon de interesses
+            } else {
+                skills.style.display = "none"; // Verberg de interesses
+            }
+        });
+    </script>
 </body>
 </html>
