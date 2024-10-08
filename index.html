@@ -55,24 +55,26 @@
             color: #666;
         }
 
+        /* Center the profile picture and bio text */
+        .bio-section .col-lg-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the image and text horizontally */
+            text-align: center;
+            margin-bottom: 20px; /* Adds space between the image and the text */
+        }
+
+        /* Additional margin adjustments */
         /* Profile image */
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            display: block;
-            margin: 0 auto;
+            margin-bottom: 20px; /* Adds space between the image and the text */
         }
 
-        /* Container for Skills & Interests buttons */
-        .skills-interests-container {
-            display: flex;
-            justify-content: space-around;
-            margin-top: opx;
-            padding: 0px 0;
-        }
-
+        /* Buttons for Skills and Interests */
         .skills-btn, .interests-btn {
             background-color: #008080;
             border: none;
@@ -81,57 +83,56 @@
             font-size: 1.2rem;
             cursor: pointer;
             border-radius: 5px;
+            margin-bottom: 10px;
+            display: inline-block; /* Ensures buttons are side by side */
         }
 
         .skills-btn:hover, .interests-btn:hover {
             background-color: #f7cb08;
         }
 
+        /* Aligning buttons side by side */
+        .skills-interests-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         /* Flex container to allow skills and interests to float in the right places */
         .skills-interests-content {
-            position: relative;
-            height: 220px; /* Adjust based on needs */
+            display: flex;
+            justify-content: space-between; /* Ensures skills and interests divs are side by side */
+            margin-top: 20px;
         }
 
         /* Skills section on the left */
         #skills {
             display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
             background-color: #fff;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
             width: 45%;
-            text-align: left;
         }
 
         /* Interests section on the right */
         #interests {
             display: none;
-            position: absolute;
-            top: 0;
-            right: 0;
             background-color: #fff;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
             width: 45%;
-            text-align: left;
         }
 
         /* Bio section */
         .bio-text {
             max-width: 600px;
-            text-align: center;
-            margin: 15px auto;
             font-size: 1.1rem;
+            text-align: center; /* This centers the text */
         }
 
         /* Divider */
         .divider {
-
             margin: 70px 0;
             border-top: 1px solid #ddd;
         }
@@ -144,7 +145,6 @@
             background-color: #f9f9f9;
             margin-bottom: 20px;
             margin-top: 20px;
-
         }
 
         .project-card img {
@@ -156,6 +156,23 @@
         /* Smooth transition */
         #skills, #interests {
             transition: all 0.5s ease;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .bio-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .skills-interests-content {
+                flex-direction: column;
+            }
+
+            #skills, #interests {
+                width: 100%;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
@@ -191,22 +208,24 @@
             More projects will be added at least once a month. Please take a look. Any feedback through the contact form is very much appreciated!
         </div>
 
-        <!-- Profile Picture -->
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
-
-        <!-- About Me Section -->
-        <div class="bio-text">
-            <p>Hi there and welcome! My name is Djamel, a fast and enthusiastic learner with a solid background in healthcare and banking. Along with my background in artificial intelligence, these fields have fueled my passion for analyzing risks, interpreting data, and creating creative, effective, and practical solutions.</p>
-            <p>Based in: Amsterdam</p>
-            <a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">
-                <button class="btn btn-primary" style="background-color: #008080; border: none;">Resume</button>
-            </a>
-        </div>
-
-        <!-- Skills and Interests Section -->
-        <div class="skills-interests-container">
-            <button class="skills-btn" id="show-skills">Show Skills</button>
-            <button class="interests-btn" id="show-interests">Show Interests</button>
+        <!-- Bio and Buttons Section -->
+        <div class="row bio-section">
+            <div class="col-lg-6 col-md-12 text-center text-lg-start">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
+                <div class="bio-text">
+                    <p>Hi there and welcome! My name is Djamel, a fast and enthusiastic learner with a solid background in healthcare and banking. Along with my background in artificial intelligence, these fields have fueled my passion for analyzing risks, interpreting data, and creating creative, effective, and practical solutions.</p>
+                    <p>Based in: Amsterdam</p>
+                    <a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">
+                        <button class="btn btn-primary" style="background-color: #008080; border: none;">Resume</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 text-center text-lg-end">
+                <div class="skills-interests-buttons">
+                    <button class="skills-btn" id="show-skills">Show Skills</button>
+                    <button class="interests-btn" id="show-interests">Show Interests</button>
+                </div>
+            </div>
         </div>
 
         <!-- Hidden sections positioned side by side -->
@@ -299,7 +318,6 @@
             </div>
         </section>
     </main>
-
     <!-- Contact Section -->
     <section id="contact-section" class="bg-light py-3 py-md-4">
         <div class="container">
