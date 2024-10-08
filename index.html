@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,91 +55,84 @@
             color: #666;
         }
 
-        /* Profile image container with logo */
-        .profile-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-
+        /* Profile image */
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
+            display: block;
+            margin: 0 auto;
         }
 
-        /* Logo positioned to the left and slightly below the profile picture */
-        .logo-img {
-            position: absolute;
-            left: 40px; /* Adjust this value to fine-tune the left positioning */
-            top: 40px; /* Adjust this value to fine-tune the vertical positioning */
-            width: 90px;
-            height: 80px;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
+        /* Container for Skills & Interests buttons */
+        .skills-interests-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: opx;
+            padding: 0px 0;
+        }
+
+        .skills-btn, .interests-btn {
+            background-color: #008080;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1.2rem;
             cursor: pointer;
-
-        }
-        .logo-img:hover {
-            transform: scale(1.1);
+            border-radius: 5px;
         }
 
-        /* Hidden text field for skills */
+        .skills-btn:hover, .interests-btn:hover {
+            background-color: #f7cb08;
+        }
+
+        /* Flex container to allow skills and interests to float in the right places */
+        .skills-interests-content {
+            position: relative;
+            height: 220px; /* Adjust based on needs */
+        }
+
+        /* Skills section on the left */
         #skills {
             display: none;
-            margin-top: 10px; /* To make it appear right below the logo */
+            position: absolute;
+            top: 0;
+            left: 0;
             background-color: #fff;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            width: 100%;
-            max-width: 300px;
+            width: 45%;
             text-align: left;
-            position: absolute;
-            left: 40px; /* Position below the logo */
-            top: 140px; /* Position below the logo */
         }
-        .logo2-img {
-            position: absolute;
-            right: 40px; /* Adjust this value to fine-tune the left positioning */
-            top: 40px; /* Adjust this value to fine-tune the vertical positioning */
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-        }
-        .logo2-img:hover {
-            transform: scale(1.1);
-        }
+
+        /* Interests section on the right */
         #interests {
             display: none;
-            margin-top: 10px; /* To make it appear right below the logo */
+            position: absolute;
+            top: 0;
+            right: 0;
             background-color: #fff;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            width: 100%;
-            max-width: 300px;
+            width: 45%;
             text-align: left;
-            position: absolute;
-            right: 40px; /* Position below the logo */
-            top: 140px; /* Position below the logo */
         }
-        /* Center the About Me text and make it a bit wider than the image */
+
+        /* Bio section */
         .bio-text {
-            max-width: 400px;
+            max-width: 600px;
             text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 15px;
+            margin: 15px auto;
             font-size: 1.1rem;
         }
 
-        /* Add a clear divider between the header and the projects section */
+        /* Divider */
         .divider {
-            margin: 40px 0;
+
+            margin: 70px 0;
             border-top: 1px solid #ddd;
         }
 
@@ -151,12 +143,8 @@
             padding: 15px;
             background-color: #f9f9f9;
             margin-bottom: 20px;
-        }
+            margin-top: 20px;
 
-        /* Make the project cards more compact */
-        .project-card h5 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
         }
 
         .project-card img {
@@ -165,14 +153,9 @@
             border-radius: 5px;
         }
 
-        .project-card p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .project-card a {
-            color: #008080;
-            font-weight: bold;
+        /* Smooth transition */
+        #skills, #interests {
+            transition: all 0.5s ease;
         }
     </style>
 </head>
@@ -190,7 +173,7 @@
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="#projects-section">Projects</a>
                     <a class="nav-link" href="#contact-section">Contact</a>
-                    <a class="nav-link" href="https://img.freepik.com/fotos-premium/detener-envejecimiento-mujer-atractiva-joven-cabeza-vendajes-mirando-camara-mientras-medicos-hacen_386167-7710.jpg?w=826">Work In Progress</a>
+                    <a class="nav-link" href="#">Work In Progress</a>
                     <a class="btn btn-warning ms-3" href="dutch.html">Nederlands</a>
                 </div>
             </div>
@@ -201,22 +184,33 @@
     <main class="container">
         <!-- Title Section -->
         <div class="main-title">Portfolio</div>
-        <div class="intro-title">
-            Artificial Intelligence and Data Analytics
-        </div>
+        <div class="intro-title">Artificial Intelligence and Data Analytics</div>
 
         <!-- Portfolio description -->
         <div class="intro-description">
             More projects will be added at least once a month. Please take a look. Any feedback through the contact form is very much appreciated!
         </div>
 
-        <!-- Profile Picture with Logo -->
-        <div class="profile-container">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczOZ2DG_kijBwIEXA3G8h-ZHGjxqiGChp7t8ve9wcyBTVr-UZFm0_2GRuCzgSR-LYS6mt3LtMVXBm995MPj8QT8JYfZhurMZwwAs60hdJ0wI8tS44V7lnnF-EvGS7bZV59s3kZOltKof0mgl8DJlckyC=w500-h500-s-no-gm?authuser=0" alt="Logo" class="logo-img" id = "logo">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczMDyT6VDi8EoZMDTxkRQjEqRMQnSXkU-K4jKYNnljWMCaBaUvtGDuzFpSK-ZBKzkfeOn2ftYDOuxemV0xydpdbYt6vKFRFJaf861170jUtyx3RJ0fNjIoX-2UghCjbwOap79Xxf0rVWhB5ngn3HECBW=w500-h500-s-no-gm?authuser=0" alt="Logo2" class="logo2-img" id = "logo2">
+        <!-- Profile Picture -->
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
 
-            <!-- Hidden section with skills that will be shown/hidden -->
+        <!-- About Me Section -->
+        <div class="bio-text">
+            <p>Hi there and welcome! My name is Djamel, a fast and enthusiastic learner with a solid background in healthcare and banking. Along with my background in artificial intelligence, these fields have fueled my passion for analyzing risks, interpreting data, and creating creative, effective, and practical solutions.</p>
+            <p>Based in: Amsterdam</p>
+            <a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">
+                <button class="btn btn-primary" style="background-color: #008080; border: none;">Resume</button>
+            </a>
+        </div>
+
+        <!-- Skills and Interests Section -->
+        <div class="skills-interests-container">
+            <button class="skills-btn" id="show-skills">Show Skills</button>
+            <button class="interests-btn" id="show-interests">Show Interests</button>
+        </div>
+
+        <!-- Hidden sections positioned side by side -->
+        <div class="skills-interests-content">
             <div id="skills">
                 <h3>My Technical Skills</h3>
                 <ul>
@@ -230,6 +224,7 @@
                     <li>TensorFlow/Keras & Pytorch</li>
                 </ul>
             </div>
+
             <div id="interests">
                 <h3>My Fields of Interests</h3>
                 <ul>
@@ -243,15 +238,6 @@
                     <li>Star Trek</li>
                 </ul>
             </div>
-        </div>
-
-        <!-- About Me Section -->
-        <div class="bio-text">
-            <p>Hi there and welcome! My name is Djamel, a fast and enthusiastic learner with a solid background in healthcare and banking. Along with my background in artificial intelligence these fields have fueled my passion for analyzing risks, interpreting data, and creating creative, effective and practical solutions</p>
-            <p>Based in: Amsterdam</p>
-            <a href="https://drive.google.com/file/d/1xmVdV0oxq64hC00M5PYLlOzfGCMBC_oM/view?usp=sharing" target="_blank">
-                <button class="btn btn-primary" style="background-color: #008080; border: none;">Resume</button>
-            </a>
         </div>
 
         <!-- Divider -->
@@ -294,7 +280,7 @@
                 <!-- Card 2 -->
                 <div class="col-md-4">
                     <div class="project-card">
-                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP3VD5-MNSeuTPWzATcyEfEmn7bOJyKA_TH-lSGpJRD9rcxsS5-lUZQXzOZPUvKN5fg3qUQZf7Q6cIwz9P42Hiy1HNSsPICxbV0oMHr1f-ZwHa8e2mSsoj274WjO5oFAHMhpEgYipRdh6dgam6k5tFY=w826-h568-s-no-gm?authuser=0" alt="LLM Applications">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP3VD5-MNSeuTPWzATcyEfEmn7bOJyKA_TH-lSGpJRD9rcxsS5-lUZQXzOZPUvKN5fg3qUQZf7Q6cIwz9P42Hiy1HNSsPICxbV0oMHr1f-ZwHa8e2mSsoj274WjO5oFAHMhpEgYipRdh6dgam6k5tFY=w826-h568-s-no-gm" alt="LLM Applications">
                         <h5>Large Language Models (LLM) Applications</h5>
                         <p>Sentiment Analysis and bias detection AI.</p>
                         <a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=drive_link" target="_blank">View Project</a>
@@ -313,6 +299,7 @@
             </div>
         </section>
     </main>
+
     <!-- Contact Section -->
     <section id="contact-section" class="bg-light py-3 py-md-4">
         <div class="container">
@@ -420,61 +407,16 @@
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // JavaScript to toggle the visibility of the skills section
-        document.getElementById('logo').addEventListener('click', function() {
+        // Toggle skills and interests
+        document.getElementById('show-skills').addEventListener('click', function() {
             var skills = document.getElementById('skills');
-            if (skills.style.display === "none" || skills.style.display === "") {
-                skills.style.display = "block"; // Show the skills
-            } else {
-                skills.style.display = "none"; // Hide the skills
-            }
+            skills.style.display = (skills.style.display === "block") ? "none" : "block";
         });
-        document.getElementById('logo2').addEventListener('click', function() {
-            var skills = document.getElementById('interests');
-            if (skills.style.display === "none" || skills.style.display === "") {
-                skills.style.display = "block"; // Show the skills
-            } else {
-                skills.style.display = "none"; // Hide the skills
-            }
+        
+        document.getElementById('show-interests').addEventListener('click', function() {
+            var interests = document.getElementById('interests');
+            interests.style.display = (interests.style.display === "block") ? "none" : "block";
         });
     </script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 </html>
