@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,19 +75,58 @@
         /* Logo positioned to the left and slightly below the profile picture */
         .logo-img {
             position: absolute;
-            left: 20px; /* Adjust this value to fine-tune the left positioning */
+            left: 40px; /* Adjust this value to fine-tune the left positioning */
             top: 40px; /* Adjust this value to fine-tune the vertical positioning */
-            width: 60px;
-            height: 60px;
+            width: 90px;
+            height: 80px;
             border-radius: 50%;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+
+        }
+        .logo-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hidden text field for skills */
+        #skills {
+            display: none;
+            margin-top: 10px; /* To make it appear right below the logo */
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+            position: absolute;
+            left: 40px; /* Position below the logo */
+            top: 140px; /* Position below the logo */
         }
         .logo2-img {
             position: absolute;
-            left: 20px; /* Adjust this value to fine-tune the left positioning */
-            top: 100px; /* Adjust this value to fine-tune the vertical positioning */
-            width: 60px;
-            height: 60px;
+            right: 40px; /* Adjust this value to fine-tune the left positioning */
+            top: 40px; /* Adjust this value to fine-tune the vertical positioning */
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
+        }
+        .logo2-img:hover {
+            transform: scale(1.1);
+        }
+        #interests {
+            display: none;
+            margin-top: 10px; /* To make it appear right below the logo */
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+            position: absolute;
+            right: 40px; /* Position below the logo */
+            top: 140px; /* Position below the logo */
         }
         /* Center the About Me text and make it a bit wider than the image */
         .bio-text {
@@ -173,9 +213,36 @@
         <!-- Profile Picture with Logo -->
         <div class="profile-container">
             <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Profile Picture" class="profile-img">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczOZ2DG_kijBwIEXA3G8h-ZHGjxqiGChp7t8ve9wcyBTVr-UZFm0_2GRuCzgSR-LYS6mt3LtMVXBm995MPj8QT8JYfZhurMZwwAs60hdJ0wI8tS44V7lnnF-EvGS7bZV59s3kZOltKof0mgl8DJlckyC=w500-h500-s-no-gm?authuser=0" alt="Logo" class="logo-img">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczMDyT6VDi8EoZMDTxkRQjEqRMQnSXkU-K4jKYNnljWMCaBaUvtGDuzFpSK-ZBKzkfeOn2ftYDOuxemV0xydpdbYt6vKFRFJaf861170jUtyx3RJ0fNjIoX-2UghCjbwOap79Xxf0rVWhB5ngn3HECBW=w500-h500-s-no-gm?authuser=0" alt="Logo" class="logo2-img">
-     
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOZ2DG_kijBwIEXA3G8h-ZHGjxqiGChp7t8ve9wcyBTVr-UZFm0_2GRuCzgSR-LYS6mt3LtMVXBm995MPj8QT8JYfZhurMZwwAs60hdJ0wI8tS44V7lnnF-EvGS7bZV59s3kZOltKof0mgl8DJlckyC=w500-h500-s-no-gm?authuser=0" alt="Logo" class="logo-img" id = "logo">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczMDyT6VDi8EoZMDTxkRQjEqRMQnSXkU-K4jKYNnljWMCaBaUvtGDuzFpSK-ZBKzkfeOn2ftYDOuxemV0xydpdbYt6vKFRFJaf861170jUtyx3RJ0fNjIoX-2UghCjbwOap79Xxf0rVWhB5ngn3HECBW=w500-h500-s-no-gm?authuser=0" alt="Logo2" class="logo2-img" id = "logo2">
+
+            <!-- Hidden section with skills that will be shown/hidden -->
+            <div id="skills">
+                <h3>My Technical Skills</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>Machine Learning</li>
+                    <li>Generative A.I.</li>
+                    <li>Natural Language Processing</li>
+                    <li>Data Analysis</li>
+                    <li>SQL & Databases</li>
+                    <li>TensorFlow/Keras & Pytorch</li>
+                </ul>
+            </div>
+            <div id="interests">
+                <h3>My Fields of Interests</h3>
+                <ul>
+                    <li>Linguistics</li>
+                    <li>Philosophy</li>
+                    <li>Geo-political Affairs</li>
+                    <li>Medical</li>
+                    <li>Human Rights</li>
+                    <li>Local and Global Economy</li>
+                    <li>Politics</li>
+                    <li>Star Trek</li>
+                </ul>
+            </div>
         </div>
 
         <!-- About Me Section -->
@@ -352,5 +419,62 @@
 
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript to toggle the visibility of the skills section
+        document.getElementById('logo').addEventListener('click', function() {
+            var skills = document.getElementById('skills');
+            if (skills.style.display === "none" || skills.style.display === "") {
+                skills.style.display = "block"; // Show the skills
+            } else {
+                skills.style.display = "none"; // Hide the skills
+            }
+        });
+        document.getElementById('logo2').addEventListener('click', function() {
+            var skills = document.getElementById('interests');
+            if (skills.style.display === "none" || skills.style.display === "") {
+                skills.style.display = "block"; // Show the skills
+            } else {
+                skills.style.display = "none"; // Hide the skills
+            }
+        });
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
