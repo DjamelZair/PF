@@ -47,10 +47,9 @@
             color: #0bd6bb;
         }
 
-
         /* Main body background color */
         body {
-            background-color: #ffffff;
+            background-color: #fafafa;
         }
 
         /* Center the title and give it a nice font size */
@@ -61,6 +60,7 @@
             font-weight: bold;
             color: #333;
         }
+
         .intro-title {
             text-align: center;
             margin-top: 5px;
@@ -86,7 +86,6 @@
             margin-bottom: 20px; /* Adds space between the image and the text */
         }
 
-        /* Additional margin adjustments */
         /* Profile image */
         .profile-img {
             width: 150px;
@@ -96,17 +95,22 @@
             margin-bottom: 20px; /* Adds space between the image and the text */
         }
 
+        .logo2-img:hover {
+            transform: scale(1.1);
+        }
+
+        .logo-img:hover {
+            transform: scale(1.1);
+        }
+
         /* Buttons for Skills and Interests */
-        .skills-btn, .interests-btn {
-            background-color: #008080;
-            border: none;
-            padding: 10px 20px;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 5px;
+        .skills-btn, .interests-btn, .logo2-img, .logo-img {
+            margin: 10px 15px; 
             margin-bottom: 10px;
             display: inline-block; /* Ensures buttons are side by side */
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
         }
 
         .skills-btn:hover, .interests-btn:hover {
@@ -196,6 +200,16 @@
                 margin-top: 20px;
             }
         }
+        #projects-section h5 {
+            margin-top: 30px; 
+        }
+
+        /* Featured Section Background */
+        #featured-project-section {
+            background-color: #c8e6e4; /* Light teal background for featured project section */
+            padding: 40px 0;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -244,8 +258,8 @@
             </div>
             <div class="col-lg-6 col-md-12 text-center text-lg-end">
                 <div class="skills-interests-buttons">
-                    <button class="skills-btn" id="show-skills">Show Skills</button>
-                    <button class="interests-btn" id="show-interests">Show Interests</button>
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMDyT6VDi8EoZMDTxkRQjEqRMQnSXkU-K4jKYNnljWMCaBaUvtGDuzFpSK-ZBKzkfeOn2ftYDOuxemV0xydpdbYt6vKFRFJaf861170jUtyx3RJ0fNjIoX-2UghCjbwOap79Xxf0rVWhB5ngn3HECBW=w500-h500-s-no-gm?authuser=0" alt="Logo2" class="logo2-img" id="show-interests">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczOZ2DG_kijBwIEXA3G8h-ZHGjxqiGChp7t8ve9wcyBTVr-UZFm0_2GRuCzgSR-LYS6mt3LtMVXBm995MPj8QT8JYfZhurMZwwAs60hdJ0wI8tS44V7lnnF-EvGS7bZV59s3kZOltKof0mgl8DJlckyC=w500-h500-s-no-gm?authuser=0" alt="Logo" class="logo-img" id="show-skills">
                 </div>
             </div>
         </div>
@@ -276,7 +290,7 @@
                     <li>Human Rights</li>
                     <li>Local and Global Economy</li>
                     <li>Politics</li>
-                    <li>Fashion</li>
+                    <li>Shopping at Action</li>
                 </ul>
             </div>
         </div>
@@ -289,24 +303,40 @@
             <h5 class="text-center">Featured Project</h5>
             <div class="card mx-auto mb-4" style="max-width: 800px;">
                 <div class="card-body text-center">
-                    <h5 class="card-title" style="font-size: 1.75rem; font-weight: bold;">Credit Scoring Model</h5>
-                    <p class="card-text">This project involved creating a credit scoring model using machine learning techniques to assess customer creditworthiness based on various financial indicators.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
+                    <h5 class="card-title" style="font-size: 1.75rem; font-weight: bold;">Local Government Building Plans and Permit Insights with RAG</h5>
+                    <p class="card-text">This project is a retrieval-augmented generation (RAG) system that answers questions about building projects in Amsterdam using a combination of Elasticsearch and an LLM-based QA system.</p>
+                    <p class="card-text"><small class="text-muted">Last updated today</small></p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item text-center">
-                            <a href="https://drive.google.com/file/d/1fMiC2Z87tmVFWfx6LW8B7Il8h0ZeT67x/view?usp=sharing" target="_blank">Predicting Loan Default with Client Segmentation Analysis (PDF)</a>
+                            <a href="https://github.com/DjamelZair/RAGsystem_LocalGovernment" target="_blank">View the Permit System Project on GitHub</a>
+                        </li>
+                        <li class="list-group-item text-center">
+                            <a href="https://drive.google.com/file/d/1i48uU8jjtETU8b6Zq4UZe9mxL6RJ_aEe/view?usp=sharing" target="_blank">Step by step implementation including challenges, future work and examples (Dutch)</a>
                         </li>
                     </ul>
                 </div>
                 <div class="featured-img text-center mt-3 mb-4">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMQavCwpBJ0byuXaWOqoGLg4DLrtx6Y_4Xmpd7Kb1Z7REwG1TOizUI-8nhonC6x8gnfd8LrVLngnI28XTc8SNFVsoOSs7PF-zslGAjIZUZXg7bKKv32R9WRKIrrB9IHFbJg2Iipir6ekV6XH-eF3V8c=w909-h606-s-no-gm?authuser=0" class="img-fluid rounded" alt="Credit Scoring Model" style="max-height: 300px;">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczN813zjKjLhWu_Gc25AHhRiPE6560lFzpfcMMmwYnw_DdIHi5R8OUhPWZDFJonkSgeonxpVotpknfAL5263lbK3S5UTZrwtu3H8rROzR2PK0yrAcOBoJiBZtZ1U3TlB7I1-U340qUfj0iKnc9Wi-K3v=w500-h500-s-no-gm?authuser=0" class="img-fluid rounded" alt="Permit System Project" style="max-height: 300px;">
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects-section" class="container">
+
+         <!-- Projects Section -->
+         <section id="projects-section" class="container">
             <h5 class="text-center">Projects</h5>
+            <div class="row">
+                <!-- New Project: Credit Scoring Model -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMQavCwpBJ0byuXaWOqoGLg4DLrtx6Y_4Xmpd7Kb1Z7REwG1TOizUI-8nhonC6x8gnfd8LrVLngnI28XTc8SNFVsoOSs7PF-zslGAjIZUZXg7bKKv32R9WRKIrrB9IHFbJg2Iipir6ekV6XH-eF3V8c=w909-h606-s-no-gm?authuser=0" class="img-fluid rounded" alt="Credit Scoring Model" style="max-height: 300px;">
+                        <h5>Credit Scoring Model</h5>
+                        <p>This project involved creating a credit scoring model using machine learning techniques.</p>
+                        <a href="https://drive.google.com/file/d/1fMiC2Z87tmVFWfx6LW8B7Il8h0ZeT67x/view?usp=sharing" target="_blank">View Project</a>
+                    </div>
+                </div>
+
+
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-md-4">
