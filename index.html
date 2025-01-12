@@ -24,27 +24,34 @@
         }
 
         .header-left {
-            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between logo and text */
         }
 
         .header-title {
-            font-size: 3rem;
+            font-size: 2.2rem; /* Adjusted font size */
             font-weight: bold;
             color: #000;
         }
 
         .header-subtitle {
             color: #507c8d; /* Signature color */
-            font-size: 2rem;
+            font-size: 1.5rem; /* Adjusted font size */
             font-weight: 600;
-            margin-top: -10px;
+            margin-top: -5px;
+        }
+
+        .header-logo {
+            width: auto;
+            height: 50px; /* Adjust height */
         }
 
         .nav-links a {
             text-decoration: none;
             color: #000;
             font-size: 1rem;
-            margin: 0 15px;
+            margin: 0 10px;
             transition: color 0.3s;
         }
 
@@ -57,11 +64,12 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 40px;
+            padding: 40px 20px;
         }
 
         .photo-section img {
-            max-width: 100%;
+            max-width: 250px; /* Controlled image size */
+            height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -69,7 +77,7 @@
         .about-section {
             text-align: center;
             flex: 1;
-            margin: 0 40px;
+            margin: 0 20px;
         }
 
         .about-title {
@@ -88,7 +96,7 @@
             background-color: #507c8d;
             color: #fff;
             padding: 10px 20px;
-            font-size: 2rem;
+            font-size: 1rem;
             border: none;
             border-radius: 5px;
             text-decoration: none;
@@ -104,7 +112,6 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            height: 100%;
             gap: 20px;
         }
 
@@ -136,11 +143,9 @@
                 padding: 20px;
             }
 
-            .nav-links {
-                margin-top: 15px;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+            .header-left {
+                flex-direction: column;
+                align-items: center;
                 gap: 10px;
             }
 
@@ -150,9 +155,8 @@
                 padding: 20px;
             }
 
-            .photo-section {
-                max-width: 90%;
-                margin-bottom: 20px;
+            .photo-section img {
+                max-width: 80%; /* Scale image on smaller screens */
             }
 
             .about-section {
@@ -177,8 +181,11 @@
     <!-- Header Section -->
     <header>
         <div class="header-left">
-            <div class="header-title">Portfolio</div>
-            <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+            <img src="LogoSite.drawio.png" alt="Logo" class="header-logo">
+            <div>
+                <div class="header-title">Portfolio</div>
+                <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+            </div>
         </div>
         <nav class="nav-links">
             <a href="#about">Home</a>
@@ -197,11 +204,16 @@
 
         <!-- Center: About Section -->
         <div class="about-section">
-            <div class="about-title">Hi there and welcome!</div>
-            <p class="about-text"> First of all: thank you for your time to visit! My name is Djamel, a passionate machine learning enthusiast with a strong foundation in both the healthcare and banking sectors. My biggest fascination lies in the boundless potential of Large Language Models (LLMs) and how they’re reshaping the way we interact with technology.</p>
-            <p class="about-text"> Fueled by curiosity, I stay on top of this fast-evolving AI landscape. My love for logic and problem-solving, combined with a healthy dose of optimism, drives me to turn challenges into opportunities for meaningful impact.            </p>
-            <p class="about-text"> On this page, I’m excited to share some of the projects I’ve worked on and the expertise I’ve gained along the way. I’ll be upfront—web development isn’t my forte, but life’s too interesting to stay in one lane. Want to know more about my side quests or just have a chat? Don’t hesitate to reach out!</p>
-
+            <div class="about-title">Hi! I'm Djamel Zair</div>
+            <p class="about-text">
+                Hi there and welcome! I’m Djamel, a passionate machine learning enthusiast with a strong foundation in both the healthcare and banking sectors.
+            </p>
+            <p class="about-text">
+                My biggest fascination lies in the boundless potential of Large Language Models (LLMs) and how they’re reshaping the way we interact with technology.
+            </p>
+            <p class="about-text">
+                On this page, I’m excited to share some of the projects I’ve worked on and the expertise I’ve gained along the way.
+            </p>
             <a href="projects.html" class="about-button">View Projects</a>
         </div>
 
