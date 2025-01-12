@@ -24,27 +24,34 @@
         }
 
         .header-left {
-            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .header-title {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #000;
         }
 
         .header-subtitle {
             color: #507c8d; /* Signature color */
-            font-size: 2rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-top: -10px;
+            margin-top: -5px;
+        }
+
+        .header-logo {
+            width: auto;
+            height: 50px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #000;
             font-size: 1rem;
-            margin: 0 15px;
+            margin: 0 10px;
             transition: color 0.3s;
         }
 
@@ -55,10 +62,13 @@
 
         /* Main Content Styling */
         .main-content {
-            padding: 40px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 40px;
+        }
+
+        .content-section {
+            flex: 3;
+            padding-right: 20px;
         }
 
         .skills-table {
@@ -88,28 +98,14 @@
             background-color: #f9f9f9;
         }
 
-        .about-button {
-            background-color: #507c8d;
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .about-button:hover {
-            background-color: #2f4156;
-        }
-
         .buttons-section {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            align-items: flex-start;
+            gap: 15px;
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
         }
 
         .action-button {
@@ -123,13 +119,19 @@
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s;
-            width: 200px;
+            width: 100%;
             text-align: center;
         }
 
         .action-button:hover {
             background-color: #507c8d;
             color: #fff;
+        }
+
+        .action-button.active {
+            background-color: #507c8d; /* Active button color */
+            color: #fff;
+            border-color: #507c8d;
         }
 
         /* Responsive Styles */
@@ -140,16 +142,31 @@
                 padding: 20px;
             }
 
+            .header-left {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .nav-links {
-                margin-top: 15px;
+                margin-top: 10px;
                 display: flex;
-                flex-wrap: wrap;
                 justify-content: center;
                 gap: 10px;
             }
 
             .main-content {
+                flex-direction: column;
                 padding: 20px;
+            }
+
+            .content-section {
+                padding-right: 0;
+            }
+
+            .buttons-section {
+                align-items: center;
+                padding-left: 0;
+                border-left: none;
             }
 
             .skills-table {
@@ -162,8 +179,11 @@
     <!-- Header Section -->
     <header>
         <div class="header-left">
-            <div class="header-title">Portfolio</div>
-            <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+            <img src="LogoSite.drawio.png" alt="Logo" class="header-logo">
+            <div>
+                <div class="header-title">Portfolio</div>
+                <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+            </div>
         </div>
         <nav class="nav-links">
             <a href="index.html">Home</a>
@@ -175,58 +195,67 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <!-- Table Section -->
-        <h2>Technical Skills</h2>
-        <table class="skills-table">
-            <tr>
-                <th>Category</th>
-                <th>Details</th>
-            </tr>
-            <tr>
-                <td>Algorithms</td>
-                <td>PCA, Viterbi, Bayesian Stats, Reinforcement Learning</td>
-            </tr>
-            <tr>
-                <td>NLP</td>
-                <td>Transformers (LLaMa, BERT), NER, RAG, XAI</td>
-            </tr>
-            <tr>
-                <td>Data Tools</td>
-                <td>Pandas, NumPy, Scikit-learn, PySpark, Dask, SHAP</td>
-            </tr>
-            <tr>
-                <td>Visualization</td>
-                <td>Matplotlib, Seaborn, Plotly</td>
-            </tr>
-            <tr>
-                <td>Programming Languages</td>
-                <td>Python, C++, SQL, Shellscript, Java</td>
-            </tr>
-            <tr>
-                <td>AI/ML Frameworks</td>
-                <td>TensorFlow, Keras, PyTorch, HuggingFace</span></td>
-            </tr>
-            <tr>
-                <td>Cloud Computing*</td>
-                <td>Microsoft Azure, Docker</td>
-            </tr>
-            <tr>
-                <td>Web Design</td>
-                <td>HTML5, CSS3, JavaScript, Bootstrap, Dynamic Webscraping, Crawling, HTTPX, BeautifulSoup </td>
-            </tr>
-            <tr>
-                <td>Operating Systems</td>
-                <td>Linux Ubuntu (main), Windows, MacOS, Kali Linux</td>
-            </tr>
-        </table>
-        <p class="footnote">
-            <small> Always learning and expanding my technical skill set to stay current with industry trends and probably familiar with many more.</small>
-        </p>
-        <p class="footnote">
-            <small>*Currently practicing for Machine Learning Associate Exam</small>
-        </p>
-        <!-- View Projects Button -->
-        <a href="projects.html" class="about-button">View Projects</a>
+        <!-- Left: Table Section -->
+        <div class="content-section">
+            <h2>Technical Skills</h2>
+            <table class="skills-table">
+                <tr>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>Algorithms</td>
+                    <td>PCA, Viterbi, Bayesian Stats, Reinforcement Learning</td>
+                </tr>
+                <tr>
+                    <td>NLP</td>
+                    <td>Transformers (LLaMa, BERT), NER, RAG, XAI</td>
+                </tr>
+                <tr>
+                    <td>Data Tools</td>
+                    <td>Pandas, NumPy, Scikit-learn, PySpark, Dask, SHAP</td>
+                </tr>
+                <tr>
+                    <td>Visualization</td>
+                    <td>Matplotlib, Seaborn, Plotly</td>
+                </tr>
+                <tr>
+                    <td>Programming Languages</td>
+                    <td>Python, C++, SQL, Shellscript, Java</td>
+                </tr>
+                <tr>
+                    <td>AI/ML Frameworks</td>
+                    <td>TensorFlow, Keras, PyTorch, HuggingFace</td>
+                </tr>
+                <tr>
+                    <td>Cloud Computing*</td>
+                    <td>Microsoft Azure, Docker</td>
+                </tr>
+                <tr>
+                    <td>Web Design</td>
+                    <td>HTML5, CSS3, JavaScript, Bootstrap, Dynamic Webscraping, Crawling, HTTPX, BeautifulSoup</td>
+                </tr>
+                <tr>
+                    <td>Operating Systems</td>
+                    <td>Linux Ubuntu (main), Windows, MacOS, Kali Linux</td>
+                </tr>
+            </table>
+            <p class="footnote">
+                <small>Always learning and expanding my technical skill set to stay current with industry trends.</small>
+            </p>
+            <p class="footnote">
+                <small>*Currently practicing for Machine Learning Associate Exam</small>
+            </p>
+        </div>
+
+        <!-- Right: Buttons Section -->
+        <div class="buttons-section">
+            <a href="technical.html" class="action-button active">Technical Skills</a>
+            <a href="courses.html" class="action-button">Courses & Certificates</a>
+            <a href="booklist.html" class="action-button">Book List 2024</a>
+            <a href="interests.html" class="action-button">Personal Interests</a>
+            <a href="resume.html" class="action-button">Contact Me</a>
+        </div>
     </div>
 </body>
 </html>
