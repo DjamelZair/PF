@@ -21,8 +21,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 20px;
             border-bottom: 1px solid #ddd;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
         }
 
         .header-left {
@@ -32,16 +33,15 @@
         }
 
         .header-title {
-            font-size: 2.6rem;
+            font-size: 2rem; /* Adjusted for mobile compatibility */
             font-weight: bold;
             color: #000;
         }
 
         .header-subtitle {
             color: #507c8d;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-top: -5px;
         }
 
         .header-logo {
@@ -49,11 +49,18 @@
             height: 50px;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap; /* Allow navigation to wrap on small screens */
+            justify-content: center; /* Center links on small screens */
+        }
+
         .nav-links a {
             text-decoration: none;
             color: #000;
             font-size: 1rem;
-            margin: 0 10px;
             transition: color 0.3s;
         }
 
@@ -66,15 +73,17 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 50px 20px;
+            padding: 20px;
             flex-wrap: wrap; /* Ensure responsiveness */
         }
 
         .photo-section img {
-            max-width: 250px;
+            max-width: 300px; /* Larger size for desktop */
+            width: 100%; /* Ensure it scales proportionally */
             height: auto;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Add spacing below for mobile */
         }
 
         .about-section {
@@ -84,18 +93,19 @@
         }
 
         .about-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
         .about-text {
-            font-size: 1.3rem;
+            font-size: 1rem;
             color: #333;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .about-button {
+            display: inline-block; /* Prevent overlapping */
             background-color: #507c8d;
             color: #fff;
             padding: 10px 20px;
@@ -104,6 +114,7 @@
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s;
+            margin-bottom: 20px; /* Add spacing for mobile */
         }
 
         .about-button:hover {
@@ -113,9 +124,10 @@
         .buttons-section {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: flex-start;
             align-items: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .action-button {
@@ -145,22 +157,40 @@
                 text-align: center;
             }
 
+            .header-left {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
             .main-content {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .photo-section img {
-                max-width: 80%;
+            .about-section {
+                margin: 20px 0;
+                text-align: center;
             }
 
             .buttons-section {
                 gap: 10px;
                 width: 100%;
+                align-items: stretch;
             }
 
             .action-button {
                 width: 100%;
+                max-width: none;
+            }
+
+            .about-button {
+                width: 90%; /* Ensure button doesn't overlap */
+            }
+
+            .nav-links {
+                gap: 10px;
+                justify-content: center;
             }
         }
     </style>
