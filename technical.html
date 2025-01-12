@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Technical Skills</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-left {
+            text-align: left;
+        }
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .header-subtitle {
+            color: #507c8d; /* Signature color */
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: -10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 1rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #507c8d; /* Highlight active page */
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .skills-table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .skills-table th,
+        .skills-table td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .skills-table th {
+            background-color: #507c8d;
+            color: white;
+        }
+
+        .skills-table td {
+            background-color: #ffffff;
+        }
+
+        .skills-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        .about-button {
+            background-color: #507c8d;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .about-button:hover {
+            background-color: #2f4156;
+        }
+
+        .buttons-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .action-button {
+            border: 2px solid #000;
+            background-color: transparent;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            width: 200px;
+            text-align: center;
+        }
+
+        .action-button:hover {
+            background-color: #507c8d;
+            color: #fff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .nav-links {
+                margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .skills-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">
+            <div class="header-title">Portfolio</div>
+            <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="main.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="nederlands.html">Nederlands</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Table Section -->
+        <h2>Technical Skills</h2>
+        <table class="skills-table">
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Algorithms</td>
+                <td>PCA, Viterbi, Bayesian Stats, Reinforcement Learning</td>
+            </tr>
+            <tr>
+                <td>NLP</td>
+                <td>Transformers (LLaMa, BERT), NER, RAG, XAI</td>
+            </tr>
+            <tr>
+                <td>Data Tools</td>
+                <td>Pandas, NumPy, Scikit-learn, PySpark, Dask, SHAP</td>
+            </tr>
+            <tr>
+                <td>Visualization</td>
+                <td>Matplotlib, Seaborn, Plotly</td>
+            </tr>
+            <tr>
+                <td>Programming Languages</td>
+                <td>Python, C++, SQL, Shellscript, Java</td>
+            </tr>
+            <tr>
+                <td>AI/ML Frameworks</td>
+                <td>TensorFlow, Keras, PyTorch, HuggingFace</span></td>
+            </tr>
+            <tr>
+                <td>Cloud Computing*</td>
+                <td>Microsoft Azure, Docker</td>
+            </tr>
+            <tr>
+                <td>Web Design</td>
+                <td>HTML5, CSS3, JavaScript, Bootstrap, Dynamic Webscraping, Crawling, HTTPX, BeautifulSoup </td>
+            </tr>
+            <tr>
+                <td>Operating Systems</td>
+                <td>Linux Ubuntu (main), Windows, MacOS, Kali Linux</td>
+            </tr>
+        </table>
+        <p class="footnote">
+            <small> Always learning and expanding my technical skill set to stay current with industry trends and probably familiar with many more.</small>
+        </p>
+        <p class="footnote">
+            <small>*Currently practicing for Machine Learning Associate Exam</small>
+        </p>
+        <!-- View Projects Button -->
+        <a href="projects.html" class="about-button">View Projects</a>
+    </div>
+</body>
+</html>
