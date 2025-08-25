@@ -1,250 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        html {
-            font-size: 16px; /* Set base font size */
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fafafa;
-            margin: 0;
-            padding: 0;
-            font-size: 1rem; /* Consistent font size */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    html {
+      font-size: 16px;
+    }
 
-        /* Header Styling */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #ddd;
-            flex-wrap: wrap; /* Allow wrapping for small screens */
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
 
-        .header-title {
-            font-size: 2rem; /* Adjusted for mobile compatibility */
-            font-weight: bold;
-            color: #000;
-        }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
 
-        .header-subtitle {
-            color: #507c8d;
-            font-size: 1rem;
-            font-weight: 600;
-        }
+    .header-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #000;
+    }
 
-        .header-logo {
-            width: auto;
-            height: 50px;
-        }
+    .header-subtitle {
+      color: #507c8d;
+      font-size: 1rem;
+      font-weight: 600;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-            flex-wrap: wrap; /* Allow navigation to wrap on small screens */
-            justify-content: center; /* Center links on small screens */
-        }
+    .header-logo {
+      height: 50px;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #000;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-        .nav-links a:hover {
-            color: #507c8d;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
 
-        /* Main Content Styling */
-        .main-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 20px;
-            flex-wrap: wrap; /* Ensure responsiveness */
-        }
+    .nav-links a:hover {
+      color: #507c8d;
+    }
 
-        .photo-section img {
-            max-width: 300px; /* Larger size for desktop */
-            width: 100%; /* Ensure it scales proportionally */
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px; /* Add spacing below for mobile */
-        }
-
-        .about-section {
-            flex: 1;
-            margin: 0 20px;
-            text-align: center;
-        }
-
-        .about-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .about-text {
-            font-size: 1rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .about-button {
-            display: inline-block; /* Prevent overlapping */
-            background-color: #507c8d;
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            margin-bottom: 20px; /* Add spacing for mobile */
-        }
-
-        .about-button:hover {
-            background-color: #2f4156;
-        }
-
-        .buttons-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .action-button {
-            border: 2px solid #000;
-            background-color: transparent;
-            color: #000;
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            width: 200px;
-            text-align: center;
-        }
-
-        .action-button:hover {
-            background-color: #507c8d;
-            color: #fff;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .header-left {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .main-content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about-section {
-                margin: 20px 0;
-                text-align: center;
-            }
-
-            .buttons-section {
-                gap: 10px;
-                width: 100%;
-                align-items: stretch;
-            }
-
-            .action-button {
-                width: 100%;
-                max-width: none;
-            }
-
-            .about-button {
-                width: 90%; /* Ensure button doesn't overlap */
-            }
-
-            .nav-links {
-                gap: 10px;
-                justify-content: center;
-            }
-        }
-    </style>
+    /* Hero section buttons hover effect */
+    a:hover {
+      transform: scale(1.03);
+      transition: transform 0.2s ease;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-left">
-            <img src="LogoSite.drawio.png" alt="Logo" class="header-logo">
-            <div>
-                <div class="header-title">Portfolio</div>
-                <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="header-left">
+      <img src="LogoSite.drawio.png" alt="Logo" class="header-logo" />
+      <div>
+        <div class="header-title">Portfolio - Djamel Dino Zair</div>
+        <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="dutch.html">Nederlands</a>
+    </nav>
+  </header>
+
+  <!-- Main Hero Content -->
+<!-- Main Hero Content -->
+<section style="max-width: 1500px; margin: 60px auto; padding: 0 20px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+      
+      <!-- Photo -->
+      <div style="flex: 1 1 300px; text-align: center;">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0"
+             alt="Djamel Zair"
+             style="width: 300px; border-radius: 16px; box-shadow: 0 0 8px rgba(0,0,0,0.1); margin-top: 10px;" />
+      </div>
+  
+      <!-- Text -->
+      <div style="flex: 2.5 1 600px;">
+        <h1 style="font-size: 2.4rem; margin-bottom: 20px;"> Welkom! </h1>
+        <p style="font-size: 1.3rem; line-height: 1.8; color: #333;">
+          Thank you for your interest in my personal webpage! 
+        </p>
+        On this page I aim to showcase some personal projects I have designed in the geospatial data and/or (Large Language Model)LLM domain. From simple
+        interactive dashboards to real time automated polygon enrichments and RAG-based chatbots. 
+        <p style="font-size: 1.3rem; line-height: 1.8; color: #333;">
+          Feel free to scroll around and try some applications.
+        </p>
+      </div>
+  
+      <!-- Buttons -->
+      <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 15px; align-self: center;">
+        <a href="technical.html" style="border: 2px solid #2f4156; color: #2f4156; padding: 14px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; text-align: center; box-shadow: 0px 2px 6px rgba(0,0,0,0.1);">🛠️ Technical Skills</a>
+        <a href="courses.html" style="border: 2px solid #2f4156; color: #2f4156; padding: 14px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; text-align: center; box-shadow: 0px 2px 6px rgba(0,0,0,0.1);">🎓 Courses</a>
+        <a href="contact.html" style="border: 2px solid #2f4156; color: #2f4156; padding: 14px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; text-align: center; box-shadow: 0px 2px 6px rgba(0,0,0,0.1);">📬 Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 60px 0; border-bottom: 1px solid #eee;">
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; max-width: 1200px; margin: auto;">
+
+
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <div class="container py-5">
+        <!-- Project 0: Nieuwbouw Dashboard -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6">
+              <a href="https://dashboard-nieuwbouw-amsterdam-0f2500ca85cb.herokuapp.com/" target="_blank">
+                  <img src="heatmap.png" class="img-fluid rounded shadow-sm" alt="Nieuwbouw Dashboard">
+              </a>
+          </div>
+          <div class="col-md-6">
+              <h3>Woningbouw Plannen Amsterdam Dashboard</h3>
+              <p>This interactive dashboard shows where and when new housing projects are planned in Amsterdam. Built with Dash, it integrates a public API, geospatial transformation (RD → WGS84), and interactive/dynamic visuals like heatmaps and charts.</p>
+              <p>Users can explore housing density, project timelines, and neighborhood distributions using filters for housing type and year.</p>
+              <p><strong>Keywords:</strong> Dash, Plotly, REST API integration, geolocation (RD/WGS84), data wrangling, interactive visualizations, sliders, checklists, map overlays, data pipelines</p>
+              <a href="https://dashboard-nieuwbouw-amsterdam-0f2500ca85cb.herokuapp.com/" target="_blank">🌐 View the dashboard</a>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+            <div class="col-md-6">
+                <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*X6QyQv7YGVRE3fy2nJOCHQ.png" class="img-fluid rounded" alt="Classification">
+            </div>
+            <div class="col-md-6">
+                <h3>Classification</h3>
+                <p>In this project I classified complaints in the banking sector by severity and determined which department should handle which complaint.</p>
+                <p>Sentiment analysis using VADER to prioritize angriest clients, followed by classification logic for routing.</p>
+                <a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=sharing" target="_blank">📊 View Notebook</a>
             </div>
         </div>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <a href="dutch.html">Nederlands</a>
-        </nav>
-    </header>
+        <!-- Project 2 -->
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6">
+              <img src="https://logowik.com/content/uploads/images/hugging-face1720994339.logowik.com.webp" class="img-fluid rounded" alt="LLM">
+          </div>
+          <div class="col-md-6">
+              <h3>LLM</h3>
+              <p>Large Language Models are trained on huge amounts of human written text. This means the bias that people can have, can transfer into the LLM.</p>
+              <p>We investigated how RoBERTa, GPT2-QA, and BART might perpetuate stereotypes, reflect unequal or negative sentiment, or show limited diversity in their answers.</p>
+              <p>We examined bias across social dimensions such as race, ethnicity, religion, age, nationality, and sexuality.</p>
+              <p><strong>Keywords:</strong> BBQ Dataset, BART, GPT2-QA, Bias Classification, Untrained Automatic Evaluation Scores, ROUGE-L, BERTScore, etc.</p>
+              <a href="https://drive.google.com/file/d/1nxecaRYFf7Uub-S0OpOSmyL0clC4vVFv/view?usp=sharing" target="_blank">📄 Read the paper</a>
+          </div>
+      </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Left: Photo -->
-        <div class="photo-section">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0" alt="Your Photo">
+        <!-- Project 4 -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+            <div class="col-md-6">
+                <img src="https://www.onlycomicuniverse.com/wp-content/uploads/2024/10/462571257_1681998285699327_2425031419335710829_n-780x470.png" class="img-fluid rounded" alt="Prediction">
+            </div>
+            <div class="col-md-6">
+                <h3>Prediction</h3>
+                <p>Two prediction-focused projects: One predicts loan approval, the other identifies customer churn. Algorithms used include CatBoost, AdaBoost, SNN, LightGBM, etc.</p>
+                <a href="https://drive.google.com/file/d/1fMiC2Z87tmVFWfx6LW8B7Il8h0ZeT67x/view?usp=sharing" target="_blank">💰 Loan Approval Model</a><br>
+                <a href="https://github.com/DjamelZair/ChurnPrediction/blob/main/Bank_customer_churn_pred.ipynb" target="_blank">📉 Customer Churn Model</a>
+            </div>
         </div>
 
-        <!-- Center: About Section -->
-        <div class="about-section">
-            <div class="about-title">Welcome!</div>
-            <p class="about-text">
-                Hi there, and welcome to my personal webpage! I'm Djamel, a machine learning enthusiast with experience in healthcare and banking. This page acts complementary to my CV to share more about my work and projects and interests.            </p>
-            <p class="about-text">
-                Personally, I'm mostly fascinated by the potential of Large Language Models (LLMs). How techniques like Retrieval-Augmented Generation (RAG) enhance data privacy in sectors like finance and healthcare. The ways prompt design, fine-tuning, and Reinforcement Learning from Human Feedback (RLHF) help reduce bias and promote fairness. Moreover, I'm excited of the new possibilities for inclusiveness, especially for individuals with disabilities, and how it allows people to focus on more creative and meaningful work by automating monotonous and repetitive tasks. </p>             
-                <p class="about-text">
-                On this page, I’m excited to share some examples I’ve worked on and the expertise I’ve gained along the way, showing my proficiency in python, knowledge of A.I. developments and data analytics.
-            </p>
-
-            <p class="footnote">
-                <small>Side note : The projects I am most proud of are under NDA's, but I hope this portfolio shows I know and can apply the concepts. Curious? I would love to chat about what is not here (yet).</small>
-            </p>
-            <a href="projects.html" class="about-button">View Projects</a>
-            <a href="https://dashboard-nieuwbouw-amsterdam-0f2500ca85cb.herokuapp.com/" class="about-button"> NEW: View Interactive Data Dashboard.</a>
-        </div>
-
-        <!-- Right: Action Buttons -->
-        <div class="buttons-section">
-            <a href="technical.html" class="action-button">Technical Skills</a>
-            <a href="courses.html" class="action-button">Courses & Certificates</a>
-            <a href="#interests" class="action-button">Personal Interests</a>
-            <a href="contact.html" class="action-button">Contact Me</a>
+        <!-- Project 5 -->
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczN813zjKjLhWu_Gc25AHhRiPE6560lFzpfcMMmwYnw_DdIHi5R8OUhPWZDFJonkSgeonxpVotpknfAL5263lbK3S5UTZrwtu3H8rROzR2PK0yrAcOBoJiBZtZ1U3TlB7I1-U340qUfj0iKnc9Wi-K3v=w500-h500-s-no-gm?authuser=0" class="img-fluid rounded" alt="RAG/LLM">
+            </div>
+            <div class="col-md-6">
+                <h3>RAG / LLM</h3>
+                <p>Project using Retrieval-Augmented Generation to help a language model answer questions about Amsterdam's housing projects.</p>
+                <p>Extended to answer questions about real-time parking and use intent classification.</p>
+                <p><strong>Keywords:</strong> Embeddings, ElasticSearch, RoBERTa</p>
+                <a href="https://github.com/DjamelZair/RAGsystem_LocalGovernment" target="_blank">📁 GitHub Repo</a><br>
+                <a href="https://drive.google.com/file/d/1i48uU8jjtETU8b6Zq4UZe9mxL6RJ_aEe/view?usp=sharing" target="_blank">📄 Scientific Writeup (Dutch)</a>
+            </div>
         </div>
     </div>
+  </section>
+
+      <!-- 🧠 Project Text -->
+      <div style="flex: 1 1 500px;">
+        <h2 style="font-size: 1.8rem;">💬 Sentiment Analysis & Complaint Classification</h2>
+        <p style="line-height: 1.6; color: #333;">
+          I developed a pipeline to classify consumer complaints in the banking sector using <strong>NLP techniques</strong>. The project focused on <strong>sentiment extraction</strong> with VADER and a <strong>multiclass classifier</strong> to route messages to relevant departments.
+        </p>
+        <ul style="padding-left: 20px;">
+          <li><strong>📌 Focus:</strong> NLP preprocessing, logistic regression, classification</li>
+          <li><strong>📊 Output:</strong> Classifies complaints by both product and sentiment</li>
+          <li><strong>📈 Impact:</strong> Boosts triage efficiency for customer service teams</li>
+        </ul>
+        <a href="https://drive.google.com/file/d/1qD0Y82cpfck-7KYBsO2s5-jGptDy3JCY/view?usp=sharing" target="_blank"
+           style="display: inline-block; margin-top: 15px; padding: 12px 20px; background: #2f4156; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+          📄 View Full Report
+        </a>
+      </div>
+  
+      <!-- 📸 Image Column -->
+      <div style="flex: 1 1 500px;">
+        <img src="https://lh3.googleusercontent.com/fife/ALs6j_E1MPFf0Ek7cdZx_XIaHe8FZpC5yRF1Lrf0l3PnrROMLFJXiWLwq99KkcZON7Pwr7p8v9q6AnU41EwnwFfk7pJns4rMVIzR-SFOL84NO3Y-gTQT3SgawOMdwSBRvZsL0lJ3RXNgptFO_ozSZQj88VQ7CyvDtULnvP25z-2Li5t8Fk19AyJtzKzmZV-Kx4C0HwsvrLDVIzWNC3q2gAHJSWI0L9IqZIAF2NqwigVWJdOUBeMYscG8FR6DGKpuw9P9TqFyLOpa-VGLWYGwUuQZzvqvZPayugwIc6JflWwVJnbnd5tcN8mb_lXIaC4xsZcssipol7V_7FB31entuLc8X5ItyR5orlv442rEius0S8YOcuUu0N3wZZ5qnKiw9U-r5IwYmsJsW97sH9zBGy9Jxht8PTynfkoNWKic4WoFec48GSGxlyVZt0eA3pdYvkXPlx-z7EPspPYvjgOZF6DFSY8xJsPCLsTqGy_fF_m9s4R-9HxYz8I1__4Ct5cqHAfKUKTnYuOPuruf1RjVJZztkEnlydLx2tHgqPdzRTaS8ZoSGmZ3lFiJM64GtrZw_-exsfxsdopcAc36dq-QWoJ60I8e15yWE3qg2YlfuwK1P33se4HDIGzLRAuo-YvGXvQ3iZiOh0Za3DctZnBeHmOp5xnlv0zXsfU6067fO3-CM1UOvS7MIAL1v22w76AZx--UxLSDTlBtQ1LvI7-d5Th66GzVDrjQYayo2KWrLeec1ATXj-xUW-Dc1wMqKTfx3okO9P9RuubvE5u7TQxsnaL5lGl--eyBquC2vu4Uc66sWpiY_vtf9ldTJUzC2gZXcihfk3qP8aNRtgyS3HaFl-nn2H5MIGRltf0tB4NI9FRQbejWvQMg0Ce2hF8k5g_SRw4YNJnpvYTTex9iSrvZ7BjiPG1blU8H4SyXxUECW99otgB_0hH8pPUjEmr7Qn9U-CwBms-3EyWC-6zJK4eLQQLcawut9cr96mTzGfaJTpzIKOpe-oj4-PXCl2GLSeQk6Nl7OeTJnYlFWRC_ISVyBL7hrO5QM7gyOEjIESQwZGyGb5vFC83O249SU790J2hloo51FOYmSqDayV2cybAw77JBg5UJK7f8hl1NCKP4rhQ_16MpY1rRksf6yiD47Od7-5ByOHJnVvBSMpffp5D68wCM-52gV202dujq4GmqDy4WXbCbAFk4_kAkd5qZqndEXlZvNFi19gIDOhpgeJY6i_7y3i6ifA0lCoNxwTDvZG-vBGCU3X6osrcseKGR_L74GrCRpJFqsDZvWKv_QW5DKG3Amt171B_SxgoAjKDl45XKoovYCLUBIYZ-x07swrF64Cl9Fsm0epn7eaKhCsSNKpdZskht6bEKXpcxsNitjvxtN5N_ow=s32-c" 
+             alt="Sentiment Distribution" 
+             style="width: 100%; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+        
+        <img src="https://lh3.google.com/u/0/ogw/AF2bZygpyAY9n8U8RB9Qsg7DhuTn9_qXsb3YuwxU-XJCrnULAg=s32-c-mo" 
+             alt="Confusion Matrix" 
+             style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+      </div>
+  
+    </div>
+  </section>
+       
+
 </body>
 </html>
