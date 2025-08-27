@@ -3,20 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
+  <title>Portfolio - Djamel Dino Zair</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    html {
-      font-size: 16px;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #fafafa;
       margin: 0;
       padding: 0;
-      font-size: 1rem;
     }
 
     header {
@@ -69,12 +64,33 @@
       color: #507c8d;
     }
 
-    a:hover {
-      transform: scale(1.03);
-      transition: transform 0.2s ease;
+    .tab-button {
+      border: 2px solid #2f4156;
+      color: #2f4156;
+      background-color: transparent;
+      padding: 12px 20px;
+      border-radius: 6px;
+      margin: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      transition: all 0.2s;
     }
 
-    /* Extra spacing between project image and text */
+    .tab-button.active {
+      background-color: #2f4156;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     .project-text {
       padding-left: 60px;
     }
@@ -84,85 +100,81 @@
         padding-left: 0;
         margin-top: 20px;
       }
-    }
 
-    .project-row {
-      margin-bottom: 80px;
+      .tab-button {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header>
-    <div class="header-left">
-      <img src="LogoSite.drawio.png" alt="Logo" class="header-logo" />
-      <div>
-        <div class="header-title">Portfolio - Djamel Dino Zair</div>
-        <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+    <header>
+      <div class="header-left">
+        <img src="LogoSite.drawio.png" alt="Logo" class="header-logo" />
+        <div>
+          <div class="header-title">Portfolio - Djamel Dino Zair</div>
+          <div class="header-subtitle">Machine Learning and Data-Analytics</div>
+        </div>
       </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="dutch.html">Nederlands</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section style="max-width: 1500px; margin: 60px auto 40px auto; padding: 0 20px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+        <div style="flex: 1 1 300px; text-align: center;">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0"
+               alt="Djamel Zair"
+               style="width: 300px; border-radius: 16px; box-shadow: 0 0 8px rgba(0,0,0,0.1); margin-top: 10px;" />
+        </div>
+
+        <div style="flex: 2.5 1 600px;">
+          <h1 style="font-size: 2.8rem; margin-bottom: 20px; text-align: center;">Welkom!</h1>
+          <p style="font-size: 1.7rem; line-height: 1.8; text-align: center; color: #333;">
+            Thank you for your interest in my personal webpage!
+          </p>
+          <p style="font-size: 1.4rem; line-height: 1.8; text-align: center; color: #333;">
+            On this page I aim to showcase some personal projects I have designed in the geospatial data and/or (Large Language Model) LLM domain. From simple interactive dashboards to real time automated polygon enrichments and RAG-based chatbots.
+          </p>
+          <p style="font-size: 1.6rem; line-height: 1.8; margin-bottom: 20px; text-align: center; color: #333;">
+            Feel free to scroll around and try some applications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab Buttons -->
+    <div style="max-width: 1500px; margin: 0 auto; text-align: center;">
+        <button class="tab-button active" data-target="projects">📁 Projects</button>
+        <button class="tab-button" data-target="skills">🛠️ Technical Skills</button>
+        <button class="tab-button" data-target="courses">🎓 Courses</button>
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
-      <a href="dutch.html">Nederlands</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section style="max-width: 1500px; margin: 60px auto 120px auto; padding: 0 20px;">
-
-    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
       
-      <!-- Photo -->
-      <div style="flex: 1 1 300px; text-align: center;">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczM3EqwY16feFmanFCY52wESFmDjSqpAeCl3dKtjvFtOrx-lQjlMWb3qvOWm6CYdmgp5QqwrghIsUQFHS1ZK4YJzcNjhaWdk4gZqPCYj_gff6ZB2Pibdu_r2K7VIOz0KOkLSuRca9C8zn7Eb3gFmDzHn=w599-h606-s-no-gm?authuser=0"
-             alt="Djamel Zair"
-             style="width: 300px; border-radius: 16px; box-shadow: 0 0 8px rgba(0,0,0,0.1); margin-top: 10px;" />
-      </div>
+    <!-- Project Section -->
+    <section id="projects" class="tab-content active" style="max-width: 1500px; margin: 60px auto; padding: 0 20px;">
+        <!-- Project 1 -->
+        <div class="row align-items-center project-row">
+          <div class="col-md-6">
+            <a href="https://dashboard-nieuwbouw-amsterdam-0f2500ca85cb.herokuapp.com/" target="_blank">
+              <img src="heatmap.png" class="img-fluid rounded shadow-sm" alt="Nieuwbouw Dashboard">
+            </a>
+          </div>
+          <div class="col-md-6 project-text">
+            <h3>Woningbouw Plannen Amsterdam Dashboard</h3>
+            <p>This interactive dashboard shows where and when new housing projects are planned in Amsterdam. Built with Dash, it integrates a public API, geospatial transformation (RD → WGS84), and interactive/dynamic visuals like heatmaps and charts.</p>
+            <p>Users can explore housing density, project timelines, and neighborhood distributions using filters for housing type and year.</p>
+            <p><strong>Keywords:</strong> Dash, Plotly, REST API integration, geolocation (RD/WGS84), data wrangling, interactive visualizations, sliders, checklists, map overlays, data pipelines</p>
+            <a href="https://dashboard-nieuwbouw-amsterdam-0f2500ca85cb.herokuapp.com/" target="_blank">🌐 View the dashboard</a>
+          </div>
+        </div>
   
-      <!-- Text -->
-      <div style="flex: 2.5 1 600px;">
-        <h1 style="font-size: 2.4rem; margin-bottom: 20px;">Welkom!</h1>
-        <p style="font-size: 1.3rem; line-height: 1.8; color: #333;">
-          Thank you for your interest in my personal webpage! 
-        </p>
-        On this page I aim to showcase some personal projects I have designed in the geospatial data and/or (Large Language Model) LLM domain. From simple
-        interactive dashboards to real time automated polygon enrichments and RAG-based chatbots. 
-        <p style="font-size: 1.3rem; line-height: 1.8; color: #333;">
-          Feel free to scroll around and try some applications.
-        </p>
-      </div>
-  
-      <!-- Buttons -->
-      <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 15px; align-self: center;">
-        <a href="technical.html" style="border: 2px solid #2f4156; color: #2f4156; padding: 14px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; text-align: center; box-shadow: 0px 2px 6px rgba(0,0,0,0.1);">🛠️ Technical Skills</a>
-        <a href="courses.html" style="border: 2px solid #2f4156; color: #2f4156; padding: 14px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; text-align: center; box-shadow: 0px 2px 6px rgba(0,0,0,0.1);">🎓 Courses</a>
-        <a href="contact.html" style="border: 2px solid #2f4156; color: #2f4156; padding: 14px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; text-align: center; box-shadow: 0px 2px 6px rgba(0,0,0,0.1);">📬 Contact Me</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section style="max-width: 1500px; margin: 60px auto 120px auto; padding: 0 20px;">
-    
-    <!-- Project 0: Nieuwbouw Dashboard -->
-    <div class="row align-items-center project-row">
-      <div class="col-md-6">
-        <a href="https://dashboard-nieuwbouw-amsterdam-0f2500ca85cb.herokuapp.com/" target="_blank">
-          <img src="heatmap.png" class="img-fluid rounded shadow-sm" alt="Nieuwbouw Dashboard">
-        </a>
-      </div>
-      <div class="col-md-6 project-text">
-        <h3>Woningbouw Plannen Amsterdam Dashboard</h3>
-        <p>This interactive dashboard shows where and when new housing projects are planned in Amsterdam. Built with Dash, it integrates a public API, geospatial transformation (RD → WGS84), and interactive/dynamic visuals like heatmaps and charts.</p>
-        <p>Users can explore housing density, project timelines, and neighborhood distributions using filters for housing type and year.</p>
-        <p><strong>Keywords:</strong> Dash, Plotly, REST API integration, geolocation (RD/WGS84), data wrangling, interactive visualizations, sliders, checklists, map overlays, data pipelines</p>
-        <a href="https://dashboard-nieuwbouw-amsterdam-0f2500ca85cb.herokuapp.com/" target="_blank">🌐 View the dashboard</a>
-      </div>
-    </div>
-
-    <!-- Project 1: Bachelor Thesis -->
+    <!-- Project 2 -->
     <div class="row align-items-center flex-md-row-reverse project-row">
       <div class="col-md-6">
         <a href="https://drive.google.com/file/d/1orSlwNMoZxLtrfTzRH0c4Mr2OWZbqoI9/view?usp=sharing" target="_blank">
@@ -179,6 +191,106 @@
         <a href="https://drive.google.com/file/d/1bxrMZ3AI07soYo9A984Z6UhuMy_DaTzJ/view?usp=sharing" target="_blank">📃 Abstract Only</a>
       </div>
     </div>
-
-</body>
-</html>
+  </section>
+  
+  <!-- Technical Skills Tab -->
+  <section id="skills" class="tab-content" style="max-width: 1500px; margin: 60px auto; padding: 0 20px;">
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 30px;">🛠️ Technical Skills</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+          <tr><th>Category</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Algorithms</td><td>PCA, Viterbi, Bayesian Stats, Reinforcement Learning</td></tr>
+          <tr><td>NLP</td><td>Transformers (LLaMa, BERT), NER, RAG, XAI</td></tr>
+          <tr><td>Data Tools</td><td>Pandas, NumPy, Scikit-learn, PySpark, Dask, SHAP</td></tr>
+          <tr><td>Visualization</td><td>Matplotlib, Seaborn, Plotly</td></tr>
+          <tr><td>Programming Languages</td><td>Python, C++, SQL, Shellscript, Java</td></tr>
+          <tr><td>AI/ML Frameworks</td><td>TensorFlow, Keras, PyTorch, HuggingFace</td></tr>
+          <tr><td>Cloud Computing*</td><td>Microsoft Azure, Docker</td></tr>
+          <tr><td>Web Design</td><td>HTML5, CSS3, JavaScript, Bootstrap, Webscraping, HTTPX, BeautifulSoup</td></tr>
+          <tr><td>Operating Systems</td><td>Linux Ubuntu (main), Windows, MacOS, Kali Linux</td></tr>
+        </tbody>
+      </table>
+      <p><small>*Currently practicing for Machine Learning Associate Exam</small></p>
+    </div>
+  </section>
+  
+  <!-- Courses Tab -->
+  <section id="courses" class="tab-content" style="max-width: 1500px; margin: 60px auto; padding: 0 20px;">
+    <h2 style="font-size: 2rem; text-align: center; margin-bottom: 30px;">🎓 Courses & Certificates</h2>
+    <div class="table-responsive">
+      <h4 style="margin-top: 30px;">Extracurricular Courses</h4>
+      <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+          <tr>
+            <th>Completion in %</th>
+            <th>Course</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>100</td><td>Deep Learning: GANs and Variational Autoencoders</td></tr>
+          <tr><td>100</td><td>Corporate ESG and Sustainability</td></tr>
+          <tr><td>80</td><td>Feature Engineering for Machine Learning</td></tr>
+          <tr><td>100</td><td>The Complete Cyber Security Course: Hackers Exposed</td></tr>
+          <tr><td>75</td><td>Python & Machine Learning for Financial Analysis</td></tr>
+          <tr><td>80</td><td>Learn Ethical Hacking From Scratch 2024</td></tr>
+        </tbody>
+      </table>
+  
+      <h4 style="margin-top: 40px;">Minor (University of Amsterdam)</h4>
+      <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+          <tr><th>Courses</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Speech Recognition and Analysis</td></tr>
+          <tr><td>Machine Learning for Structured Data (e.g., graphs)</td></tr>
+          <tr><td>Search</td></tr>
+          <tr><td>Foundation of Multi-Agent Systems</td></tr>
+          <tr><td>Philosophy and AI</td></tr>
+          <tr><td>C++</td></tr>
+        </tbody>
+      </table>
+  
+      <p><small>Major also in A.I.</small></p>
+    </div>
+  </section>
+<!-- Tab Functionaliteit Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+  
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const target = this.getAttribute('data-target');
+  
+          // Actieve knop aanpassen
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+  
+          // Toon juiste tab content
+          tabContents.forEach(content => {
+            if (content.id === target) {
+              content.classList.add('active');
+            } else {
+              content.classList.remove('active');
+            }
+          });
+  
+          // Scroll smooth naar tab
+          const scrollToSection = document.getElementById(target);
+          if (scrollToSection) {
+            scrollToSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
+  
+  <!-- Einde pagina -->
+  </body>
+  </html>
+    
